@@ -1,0 +1,17 @@
+.moi{
+    border: 2px black solid !important;
+}
+
+
+#order-col{
+    background-color:#cccccc;
+}
+
+.order-b{
+    background-image: url("../img/tausta.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+
+    height: 100%;
+
+}
