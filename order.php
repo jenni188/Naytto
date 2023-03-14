@@ -11,7 +11,12 @@
     <link rel="stylesheet" href="css/my.css">
     <title>Document</title>
 </head>
+
 <body class= "order-b">
+    <div id="msg" class="alert alert-dismissible alert-danger d-none">
+      <h4 class="alert-heading">Warning!</h4>
+      <p class="mb-0"></a></p>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Hallavan Art</a>
@@ -45,7 +50,7 @@
     </div>
     <div class="col-6" id="order-col">
       One of three columns
-      <form name="orderForm" method="POST">
+      <form name="orderForm" action="backend/readOrder.php"method="POST">
   <fieldset>
     <legend>Order Form</legend>
     <div class="form-group">
@@ -58,7 +63,7 @@
     </div>
     <div class="form-group">
         <label for="pnumber" class="form-label mt-3">Phone number</label>
-        <input type="tel" id="pnumber" name="pnumber" class="form-control" placeholder="Phone number">
+        <input type="tel"  id="pnumber" name="pnumber" class="form-control" placeholder="+3589387569">
     </div>
     <div class="form-group">
       <label for="email" class="form-label mt-3">Email address</label>
@@ -72,7 +77,7 @@
                     <button class="btn btn-primary btn-sm float-end mt-2" id="addProduct">Add new product</button>
                 </div>
                 <div class="col">
-                    <button class="btn btn-primary btn-sm float-end mt-2" id="addProduct">Delete product</button>
+                    <button class="btn btn-primary btn-sm float-end mt-2" id="deleteProduct">Delete product</button>
                 </div>
             </div>
         </div>
@@ -90,8 +95,8 @@
     <div class="row">
         <div class="col">
             <div class="form-group">
-                <label for="Product1" class="form-label mt-3">Product 1</label>
-                <input name="Product1"type="text" class="form-control" placeholder="Product 1">
+                <label for="product1" class="form-label mt-3">Product 1</label>
+                <input name="product1"type="text" class="form-control" placeholder="Product 1">
             </div>
         </div>
         <div class="col">
@@ -101,9 +106,8 @@
             </div>
         </div>
     </div>
-
-    <button type="submit" class="btn btn-primary" id="sendOrder">Send order</button>
   </fieldset>
+  <button type="submit" class="btn btn-primary" id="sendOrder">Send order</button>
 </form>
     </div>
     <div class="col-3 moi">
@@ -112,6 +116,8 @@
   </div>
 </div>
 </body>
+<script src="js/common.js"></script>
 <script src="js/order.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </html>

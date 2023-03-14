@@ -12,6 +12,10 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="msg" class="alert alert-dismissible alert-danger d-none">
+        <h4 class="alert-heading">Warning!</h4>
+        <p class="mb-0"></a></p>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Hallavan Art</a>
