@@ -15,6 +15,21 @@ CREATE SCHEMA IF NOT EXISTS `naytto` DEFAULT CHARACTER SET utf8 ;
 USE `naytto` ;
 
 -- -----------------------------------------------------
+-- Table `naytto`.`product`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `naytto`.`product` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `category_nro` INT UNSIGNED NOT NULL,
+  `product_name` VARCHAR(100) NOT NULL,
+  `productc_img` LONGBLOB NOT NULL,
+  `product_desc` VARCHAR(500) NOT NULL,
+  `product_code` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `product_code_UNIQUE` (`product_code` ASC))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `naytto`.`user`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `naytto`.`user` (
@@ -29,28 +44,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `naytto`.`product`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `naytto`.`product` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `category_nro` INT UNSIGNED NOT NULL,
-  `product_name` VARCHAR(100) NOT NULL,
-  `productc_img` LONGBLOB NOT NULL,
-  `product_desc` VARCHAR(500) NOT NULL,
-  `product_code` INT NOT NULL,
-  `user_id` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `product_code_UNIQUE` (`product_code` ASC),
-  INDEX `fk_product_user_idx` (`user_id` ASC),
-  CONSTRAINT `fk_product_user`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `naytto`.`user` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `naytto`.`text`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `naytto`.`text` (
@@ -58,16 +51,9 @@ CREATE TABLE IF NOT EXISTS `naytto`.`text` (
   `me_text` VARCHAR(1000) NOT NULL,
   `order_text` VARCHAR(1000) NOT NULL,
   `contact_text` VARCHAR(1000) NOT NULL,
-  `user_id` INT NOT NULL,
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `me_text_UNIQUE` (`me_text` ASC),
-  INDEX `fk_text_user1_idx` (`user_id` ASC),
-  CONSTRAINT `fk_text_user1`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `naytto`.`user` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  UNIQUE INDEX `me_text_UNIQUE` (`me_text` ASC))
 ENGINE = InnoDB;
 
 

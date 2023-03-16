@@ -13,10 +13,7 @@
 </head>
 
 <body class= "order-b">
-    <div id="msg" class="alert alert-dismissible alert-danger d-none">
-      <h4 class="alert-heading">Warning!</h4>
-      <p class="mb-0"></a></p>
-    </div>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Hallavan Art</a>
@@ -26,23 +23,29 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home
-            <span class="visually-hidden">(current)</span>
+          <a class="nav-link" href="index.php">Home
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="order.php">Order form</a>
+          <a class="nav-link active" href="order.php">Order form
+          <span class="visually-hidden">(current)</span>
+          </a>
+          
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="about.php">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="contact.php">Contact</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+<div id="msg" class="alert alert-dismissible alert-danger d-none">
+    <h4 class="alert-heading">Warning!</h4>
+    <p class="mb-0"></a></p>
+</div>
 <div class="container container-1" >
   <div class="row ">
     <div class="col-3 moi ">
@@ -116,8 +119,7 @@
   </div>
 </div>
 </body>
-<script src="js/common.js"></script>
 <script src="js/order.js"></script>
-
+<script src="js/common.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </html>

@@ -15,3 +15,10 @@
     height: 100%;
 
 }
+
+.moikka{
+    background-image: url("../img/tausta1.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 200px;
+}

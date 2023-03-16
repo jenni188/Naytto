@@ -30,28 +30,32 @@ function sendOrder(event){
     })
 
 
-    // if (fname.length <= 0 ){
-    //     alert("First name empty!")
+    //  if (fname.length <= 0 ){
+    //      showMessage('warning','moi');
+    //      return;
+    //  }else if (lname.length <= 0 ){
+    //      alert("Last name empty!")
+    //      return;
+    //  }else if (email.length <= 0 ){
+    //      alert("Email empty!")
     //     return;
-    // }else if (lname.length <= 0 ){
-    //     alert("Last name empty!")
-    //     return;
-    // }else if (email.length <= 0 ){
-    //     alert("Email empty!")
-    //     return;
-    // }
+    //  }
 
     let postData = `fname=${fname}&lname=${lname}&pnumber=${pnumber}&email${email}`;
     let i = 0;
     let x = 0;
     products.forEach(function(product){
-        postData += `&product${i++}=$product`
+        postData += `&product${i++}=${product}`
     })
     amounts.forEach(function(amount){
-        postData += `&amount${x++}=$amount`
+        postData += `&amount${x++}=${amount}`
     })
 
     console.log(postData);
+
+
+
+    
 
 }
 
@@ -91,7 +95,7 @@ function addProduct(event){
     input1.setAttributeNode(inputType1);
     
     const inputName1 = document.createAttribute('name');
-    inputName1.value = `Product${productCount}`;
+    inputName1.value = `product${productCount}`;
     input1.setAttributeNode(inputName1);
 
     const inputPlaceHolder1 = document.createAttribute('placeholder');
@@ -127,7 +131,7 @@ function addProduct(event){
    input2.setAttributeNode(inputType2);
    
    const inputName2 = document.createAttribute('name');
-   inputName2.value = `Product${productCount}`;
+   inputName2.value = `product${productCount}`;
    input2.setAttributeNode(inputName2);
 
    const inputPlaceHolder2 = document.createAttribute('placeholder');

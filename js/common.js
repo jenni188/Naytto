@@ -35,6 +35,6 @@ function showMessage(type,msg){
     msgBox.classList.remove('d-none');
     setTimeout(function(){
         msgBox.classList.add('d-none');
-    }, 5000);
+    }, 4000);
 }
 
