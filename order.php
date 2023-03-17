@@ -62,7 +62,7 @@
     </div>
     <div class="form-group">
         <label for="lname" class="form-label mt-3">Last name</label>
-        <input type="text" id="lfname" name="lname" class="form-control" placeholder="Last name">
+        <input type="text" id="lname" name="lname" class="form-control" placeholder="Last name">
     </div>
     <div class="form-group">
         <label for="pnumber" class="form-label mt-3">Phone number</label>
@@ -88,7 +88,7 @@
             col two
             <div class="form-group">
                 <label for="select" class="form-label">Payment method</label>
-                <select class="form-select" id="select">
+                <select class="form-select" id="payment">
                     <option>Bank Transfer</option>
                     <option>MobilePay</option>
                 </select>

@@ -55,10 +55,9 @@
     <div class="col-3 moi ">
       One of three columns
     </div>
-    <div class="col-6" id="order-col">
+    <div class="col-6" id="contact-col">
       One of three columns
-      <h2>Contact information</h2>
-      <p class="text" id="contact-text"></p>
+
     </div>
     <div class="col-3 moi">
       One of three columns

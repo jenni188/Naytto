@@ -1,16 +1,19 @@
 let productCount = 1;
+let amountCount = 1;
 
 document.getElementById('deleteProduct').addEventListener('click', deleteProduct);
 document.getElementById('addProduct').addEventListener('click', addProduct);
 document.forms['orderForm'].addEventListener('submit', sendOrder);
 
 function sendOrder(event){
+    console.log('submit order')
     event.preventDefault();
 
     const fname = document.forms['orderForm']['fname'].value;
     const lname = document.forms['orderForm']['lname'].value;
     const pnumber = document.forms['orderForm']['pnumber'].value;
     const email = document.forms['orderForm']['email'].value;
+    const select = document.getElementById('payment').value;
 
     const products = [];
     const amounts = [];
@@ -41,7 +44,7 @@ function sendOrder(event){
     //     return;
     //  }
 
-    let postData = `fname=${fname}&lname=${lname}&pnumber=${pnumber}&email${email}`;
+    let postData = `fname=${fname}&lname=${lname}&pnumber=${pnumber}&email=${email}&select=${select}`;
     let i = 0;
     let x = 0;
     products.forEach(function(product){
@@ -53,8 +56,20 @@ function sendOrder(event){
 
     console.log(postData);
 
+    let ajax = new XMLHttpRequest();
+    ajax.onload = function(){
+        const data = JSON.parse(this.responseText);
+        if (data.hasOwnProperty('success')){
+            window.location.href = "backend/readOrder.php?type=success&msg=New poll inserted"
+        } else{
+            showMessage('error',data.error);
+        }
+        console.log(data);
+    }
 
-
+    ajax.open("POST" , "backend/readOrder.php", true);
+    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    ajax.send(postData);
     
 
 }
@@ -64,6 +79,7 @@ function addProduct(event){
     event.preventDefault();
 
     productCount++;
+    amountCount++;
 
     // luodaan uusi div row
     const rdiv = document.createElement('div');
@@ -117,8 +133,8 @@ function addProduct(event){
    // luodaan label määrälle
    const label2 = document.createElement('label');
    const forAttribute2 = document.createAttribute('for');
-   const labelText2 = document.createTextNode(`Amount ${productCount}`);
-   forAttribute2.value = `Amount${productCount}`;
+   const labelText2 = document.createTextNode(`Amount ${amountCount}`);
+   forAttribute2.value = `amount${amountCount}`;
    label2.setAttributeNode(forAttribute2);
    label2.appendChild(labelText2);
    // luodaan input määrälle
@@ -131,11 +147,11 @@ function addProduct(event){
    input2.setAttributeNode(inputType2);
    
    const inputName2 = document.createAttribute('name');
-   inputName2.value = `product${productCount}`;
+   inputName2.value = `amount${amountCount}`;
    input2.setAttributeNode(inputName2);
 
    const inputPlaceHolder2 = document.createAttribute('placeholder');
-   inputPlaceHolder2.value = `Product ${productCount}`;
+   inputPlaceHolder2.value = `Amount ${amountCount}`;
    input2.setAttributeNode(inputPlaceHolder2);
 
    rdiv.appendChild(col2);
