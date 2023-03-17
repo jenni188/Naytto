@@ -6,21 +6,22 @@ let data = null;
 
 
 function getPolls(){
-
     console.log("haetaan data");
     
     let ajax = new XMLHttpRequest();
     ajax.onload = function(){
-        data = JSON.parse(this.responseText);
+        const data = JSON.parse(this.responseText);
+        console.log(data);
         vittu();
     }
 
     ajax.open("GET", "backend/getContact.php");
     ajax.send();
-    console.log(data);
+    
 }
+console.log(data);
 
-function vittu(){
+function vittu(data){
     const col = document.getElementById('contact-col');
     col.innerHTML= "";
 
@@ -29,8 +30,12 @@ function vittu(){
     const newh2Text = document.createTextNode('Contact information');
     newh2.appendChild(newh2Text);
 
-    col.appendChild(newh2);
+    const newP = document.createElement('p');
+    newP.className = 'text';
+    const pText = createTextNode(data);
 
+    col.appendChild(newh2);
+    col.appendChild(newP);
 }
 
 {/* <h2>Contact information</h2>

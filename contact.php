@@ -55,7 +55,7 @@
     <div class="col-3 moi ">
       One of three columns
     </div>
-    <div class="col-6" id="contact-col">
+    <div class="col-6 contact-col" id="contact-col">
       One of three columns
 
     </div>
