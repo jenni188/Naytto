@@ -9,7 +9,7 @@ $desc1 = $_POST['desc1'];
 include_once 'pdo-connect.php';
 
 try{
-    $stmt = $conn->prepare("INSERT INTO product (category, name, desc1, code) VALUES (:name, :code, :category, :desc1) ");
+    $stmt = $conn->prepare("INSERT INTO product (name, code, category, desc1) VALUES (:name, :code, :category, :desc1) ");
     $stmt-> bindParam('name', $name);
     $stmt-> bindParam('code', $code);
     $stmt-> bindParam('category', $category);
