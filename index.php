@@ -12,10 +12,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="msg" class="alert alert-dismissible alert-danger d-none">
-        <h4 class="alert-heading">Warning!</h4>
-        <p class="mb-0"></a></p>
-    </div>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Hallavan Art</a>
@@ -42,6 +39,10 @@
     </div>
   </div>
 </nav>
+<div id="msg" class="alert alert-dismissible alert-danger d-none">
+        <h4 class="alert-heading">Warning!</h4>
+        <p class="mb-0"></a></p>
+    </div>
 <div class="container-fluid" >
     <div class="row">
         <div class="col moikka" >
@@ -49,18 +50,58 @@
         </div>
   </div>
   <div class="row ">
-    <div class="col-3 moi ">
+    <div class="col-sm moi ">
       One of three columns
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="optionsRadios" checked="" onclick="showProducts('all')">
+          <label class="form-check-label" for="optionsRadios1">Show All</label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="optionsRadios" onclick="showProducts('paintings')">
+          <label class="form-check-label" for="optionsRadios2">Show Paintings</label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="optionsRadios" onclick="showProducts('cards')">
+          <label class="form-check-label" for="optionsRadios3">Show Cards</label>
+      </div>
     </div>
-    <div class="col-6" id="order-col">
+    <div class="col-8" id="order-col">
       One of three columns
-
+      <div class="row " id="productRow">
+        <div class="col product-col moi">
+            <div class="row img-row">
+              <div class="col kuva-col moi">
+                tänne kuva
+                <img src="" alt="">
+              </div>
+            </div>
+            <div class="row info-row">
+              <div class="col info-col moi">
+                 tänne tiedot li elementteihin
+                <ul class="product-ul">
+                  li elementit
+                </ul>
+              </div>
+            </div>
+        </div>
+        <div class="col moi">
+            one of 4
+        </div>
+        <div class="col moi">
+            one of 4
+        </div>
+        <div class="col moi">
+            one of 4
+        </div>
+      </div>
     </div>
-    <div class="col-3 moi">
+    <div class="col-sm moi">
       One of three columns
     </div>
   </div>
 </div>
 </body>
+<script src="js/index.js"></script>
+<script src="js/common.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </html>

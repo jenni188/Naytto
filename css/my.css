@@ -11,6 +11,11 @@
     background-color:#cccccc;
 }
 
+#filter-col{
+    background-color: #737373;
+    color: white;
+}
+
 .order-b{
     background-image: url("../img/tausta.jpg");
     background-repeat: no-repeat;

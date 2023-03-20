@@ -19,11 +19,12 @@ USE `naytto` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `naytto`.`product` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `category` INT UNSIGNED NOT NULL,
+  `category` VARCHAR(45) NOT NULL,
   `name` VARCHAR(100) NOT NULL,
-  `productc_img` LONGBLOB NOT NULL,
+  `img` LONGBLOB NOT NULL,
   `desc1` VARCHAR(500) NOT NULL,
   `code` INT NOT NULL,
+  `price` INT NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `code_UNIQUE` (`code` ASC))
 ENGINE = InnoDB;
@@ -38,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `naytto`.`user` (
   `pwd` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
-  UNIQUE INDEX `user_name_UNIQUE` (`user_name` ASC),
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC),
   UNIQUE INDEX `pwd_UNIQUE` (`pwd` ASC))
 ENGINE = InnoDB;
 

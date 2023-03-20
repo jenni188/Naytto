@@ -1,0 +1,41 @@
+﻿Nettisivut to do 
+red = to do 
+green = done
+
+
+TILAUSLOMAKE
+sähköpostin kasaus
+        tuotteiden ja määrien läpikäynti
+
+
+ETUSIVU
+tuotteiden suodatus?
+tuotteiden jäjestely 5per rivi?
+kuvien tuonti tietokannasta?
+
+
+KIRJAUDU SISÄÄN
+väittää salasanaa vääräksi
+salasanan hash
+
+
+YHTEYSTIETOJA 
+tietojen tuonti tietokannasta yhdelle haulle?
+
+
+TIETOJA
+tietojen tuonti tietokannasta yhdelle haulle?
+
+
+ETUSIVU(ADMIN)
+
+
+YHTEYSTIEDOT(ADMIN)
+
+
+TIETOJA(ADMIN)
+
+
+LUO UUSI TUOTE(ADMIN)
+admin käyttäjän suodatus?
+kategoria suodatus?

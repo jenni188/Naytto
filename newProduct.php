@@ -61,20 +61,20 @@
                 <input type="text" id="p-name" name="p-name" class="form-control" placeholder="Product Name">
             </div>
             <div class="form-group">
+                <label for="p-price" class="form-label mt-3">Product Price</label>
+                <input type="number" id="p-price" name="p-price" class="form-control" placeholder="Product Price">
+            </div>
+            <div class="form-group">
                 <label for="p-code" class="form-label mt-3">Product code</label>
                 <input type="number" id="p-code" name="p-code" class="form-control" placeholder="Product Code">
             </div>
             <div class="form-group">
                 <label for="p-category" class="form-label mt-3">Product Category</label>
-                <input type="number" id="p-category" name="p-cateory" class="form-control" placeholder="Product Category">
-            </div>
-            <div class="form-group">
-                <label for="p-desc" class="form-label mt-3">Product description</label>
-                <textarea class="form-control" id="p-desc" name="p-desc"rows="3" placeholder="Product description"></textarea>
+                <input type="text" id="p-category" name="p-cateory" class="form-control" placeholder="Product Category">
             </div>
             <div class="form-group">
             <label for="p-img" class="form-label mt-3">Product Image</label>
-            <input name="p-img"type="file" class="form-control" id="p-img" placeholder="Product Image">
+            <input name="p-img" type="file" class="form-control" id="p-img" placeholder="Product Image">
             </div>
         </fieldset>
         <button type="submit" class="btn btn-primary mt-3" id="createP">Create Product</button>
