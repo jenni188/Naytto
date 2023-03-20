@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `naytto`.`product` (
   `desc1` VARCHAR(500) NOT NULL,
   `code` INT NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `product_code_UNIQUE` (`product_code` ASC))
+  UNIQUE INDEX `code_UNIQUE` (`code` ASC))
 ENGINE = InnoDB;
 
 
