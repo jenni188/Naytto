@@ -22,11 +22,10 @@ CREATE TABLE IF NOT EXISTS `naytto`.`product` (
   `category` VARCHAR(45) NOT NULL,
   `name` VARCHAR(100) NOT NULL,
   `img` LONGBLOB NOT NULL,
-  `desc1` VARCHAR(500) NOT NULL,
   `code` INT NOT NULL,
   `price` INT NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `code_UNIQUE` (`code` ASC))
+  UNIQUE INDEX `product_code_UNIQUE` (`code` ASC))
 ENGINE = InnoDB;
 
 
@@ -39,22 +38,20 @@ CREATE TABLE IF NOT EXISTS `naytto`.`user` (
   `pwd` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
-  UNIQUE INDEX `username_UNIQUE` (`username` ASC),
-  UNIQUE INDEX `pwd_UNIQUE` (`pwd` ASC))
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `naytto`.`text`
+-- Table `naytto`.`texts`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `naytto`.`text` (
+CREATE TABLE IF NOT EXISTS `naytto`.`texts` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `me_text` VARCHAR(1000) NOT NULL,
-  `order_text` VARCHAR(1000) NOT NULL,
-  `contact_text` VARCHAR(1000) NOT NULL,
+  `heading` VARCHAR(50) NOT NULL,
+  `text` VARCHAR(1000) NOT NULL,
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `me_text_UNIQUE` (`me_text` ASC))
+  UNIQUE INDEX `me_text_UNIQUE` (`heading` ASC))
 ENGINE = InnoDB;
 
 

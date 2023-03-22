@@ -34,9 +34,6 @@
           <span class="visually-hidden">(current)</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.php">Contact</a>
-        </li>
       </ul>
     </div>
   </div>
@@ -57,10 +54,14 @@
     </div>
     <div class="col-6" id="order-col">
       One of three columns
-      <h2>Me</h2>
-      <p class="text" id="me-text"></p>
-      <h2>Order guide</h2>
-      <p class="text" id="order-text"></p>
+      <ul id="about-ul">
+        <li class="list-group-item">
+          <h2>
+          </h2>
+          <p>    
+          </p>
+        </li>
+      </ul>
     </div>
     <div class="col-3 moi">
       One of three columns

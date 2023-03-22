@@ -1,8 +1,18 @@
 <?php
+
+if (!isset($_GET['id'])){
+    header('Location: ../about.php');
+}
+
+
+$textid = $_GET['id'];
+
 include_once 'pdo-connect.php';
 
-try {
-    $stmt = $conn->prepare("SELECT contact_text FROM text");
+try{
+    $stmt = $conn->prepare("SELECT id, heading, text FROM texts WHERE  id = :textid");
+
+    $stmt->bindParam(':textid', $textid);
 
     if ($stmt -> execute() == false){
         $data = array(
@@ -10,13 +20,13 @@ try {
         );
     }else {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
         $data = $result;
     }
-} catch(PDOException $e){
+}catch(PDOException $e){
     $data = array(
        'error'=> 'Tapahtui jokin virhe'
    );
 }
+
 header("Content-type: application/json;charset=utf-8");
 echo json_encode($data);

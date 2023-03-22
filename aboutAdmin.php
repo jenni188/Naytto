@@ -23,17 +23,14 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.php">Home
+          <a class="nav-link " href="index.php">Home
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="order.php">Order form</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.php">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="Contact">Contact
+          <a class="nav-link active" href="about.php">About
           <span class="visually-hidden">(current)</span>
           </a>
         </li>
@@ -55,9 +52,10 @@
     <div class="col-3 moi ">
       One of three columns
     </div>
-    <div class="col-6 contact-col" id="contact-col">
+    <div class="col-6" id="order-col">
       One of three columns
-
+      <ul id="about-ul">
+      </ul>
     </div>
     <div class="col-3 moi">
       One of three columns
@@ -65,7 +63,7 @@
   </div>
 </div>
 </body>
-<script src="js/contact.js"></script>
+<script src="js/aboutAdmin.js"></script>
 <script src="js/common.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </html>

@@ -23,17 +23,16 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.php">Home
+          <a class="nav-link " href="index.php">Home
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="order.php">Order form
+          <a class="nav-link" href="order.php">Order form</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="about.php">About
           <span class="visually-hidden">(current)</span>
           </a>
-          
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.php">About</a>
         </li>
       </ul>
     </div>
@@ -43,39 +42,34 @@
     <h4 class="alert-heading">Warning!</h4>
     <p class="mb-0"></a></p>
 </div>
-<div class="container container-1" >
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col moikka" >
+        1 of 2
+        </div>
+  </div>
   <div class="row ">
     <div class="col-3 moi ">
       One of three columns
     </div>
     <div class="col-6" id="order-col">
       One of three columns
-      <form name="p-form" >
-        <fieldset>
-            <legend>Create New Product</legend>
+        <form name="editText" >
+        <input type="hidden" name="id">
+              <fieldset>
+                <h3>Edit Text</h3>
             <div class="form-group">
-                <label for="p-name" class="form-label mt-3">Product Name</label>
-                <input type="text" id="p-name" name="p-name" class="form-control" placeholder="Product Name">
+
+                <label for="heading" class="form-label mt-4">Heading</label>
+                <input name="heading" type="text" class="form-control">
             </div>
             <div class="form-group">
-                <label for="p-price" class="form-label mt-3">Product Price</label>
-                <input type="number" id="p-price" name="p-price" class="form-control" placeholder="Product Price">
+                <label for="text" class="form-label mt-4">Text</label>
+                <input name="text" type="text" class="form-control">
             </div>
-            <div class="form-group">
-                <label for="p-code" class="form-label mt-3">Product code</label>
-                <input type="number" id="p-code" name="p-code" class="form-control" placeholder="Product Code">
-            </div>
-            <div class="form-group">
-                <label for="p-category" class="form-label mt-3">Product Category</label>
-                <input type="text" id="p-category" name="p-cateory" class="form-control" placeholder="Product Category">
-            </div>
-            <div class="form-group">
-            <label for="p-img" class="form-label mt-3">Product Image</label>
-            <input name="p-img" type="file" class="form-control" id="p-img" placeholder="Product Image">
-            </div>
-        </fieldset>
-        <button type="submit" class="btn btn-primary mt-3" id="createP">Create Product</button>
-      </form>
+            </fieldset>
+            <button type="submit" class="btn btn-primary mt-3" id="reg-btn">Save Text Changes</button>
+        </form>
     </div>
     <div class="col-3 moi">
       One of three columns
@@ -83,7 +77,7 @@
   </div>
 </div>
 </body>
-<script src="js/product.js"></script>
+<script src="js/editText.js"></script>
 <script src="js/common.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </html>
