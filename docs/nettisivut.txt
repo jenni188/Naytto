@@ -19,22 +19,24 @@ väittää salasanaa vääräksi
 salasanan hash
 
 
-YHTEYSTIETOJA 
-tietojen tuonti tietokannasta yhdelle haulle?
+YHTEYSTIETOJA (valmis)
+tietojen tuonti tietokannasta yhdelle haulle?*
 
 
-TIETOJA
-tietojen tuonti tietokannasta yhdelle haulle?
+TIETOJA (valmis)
+tietojen tuonti tietokannasta yhdelle haulle?*
+
 
 
 ETUSIVU(ADMIN)
 
 
-YHTEYSTIEDOT(ADMIN)
+YHTEYSTIEDOT(ADMIN)*
 
 
-TIETOJA(ADMIN)
-
+TIETOJA(ADMIN) (valmis)
+tekstin poisto *
+tekstin lisäys *
 
 LUO UUSI TUOTE(ADMIN)
 admin käyttäjän suodatus?

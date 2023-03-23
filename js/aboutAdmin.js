@@ -1,5 +1,11 @@
 document.body.addEventListener('load', getText1());
 document.getElementById('about-ul').addEventListener('click', openText);
+document.getElementById('create-btn').addEventListener('click', openNew);
+
+function openNew(){
+    window.location.href = "newText.php";
+}
+
 
 let data = null;
 

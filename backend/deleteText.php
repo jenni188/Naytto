@@ -10,7 +10,7 @@ $textid = $_GET['id'];
 include_once 'pdo-connect.php';
 
 try{
-    $stmt = $conn->prepare("DELETE FROM texts WHERE textid = :id ");
+    $stmt = $conn->prepare("DELETE FROM texts WHERE id = :textid ");
     $stmt->bindParam(':textid', $textid);
 
     if ($stmt -> execute() == false){
@@ -19,7 +19,7 @@ try{
         );
     }else {
         $data = array(
-            'success'=> 'Poll removed!'
+            'success'=> 'Text removed!'
         );
     }
 

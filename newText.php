@@ -50,14 +50,25 @@
   </div>
   <div class="row ">
     <div class="col-3 moi ">
-      
+      One of three columns
     </div>
     <div class="col-6" id="order-col">
       One of three columns
-      
-      <ul id="about-ul">
-      </ul>
-      <button class="btn btn-primary btn-md float-end " id="create-btn">Create New</button>
+        <form name="newText" >
+              <fieldset>
+                <h3>Create New Text</h3>
+            <div class="form-group">
+
+                <label for="heading" class="form-label mt-4">Heading</label>
+                <input name="heading" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="text" class="form-label mt-4">Text</label>
+                <input name="text" type="text" class="form-control">
+            </div>
+            </fieldset>
+            <button type="submit" class="btn btn-primary mt-3" id="reg-btn">Save Text Changes</button>
+        </form>
     </div>
     <div class="col-3 moi">
       One of three columns
@@ -65,7 +76,7 @@
   </div>
 </div>
 </body>
-<script src="js/aboutAdmin.js"></script>
+<script src="js/newText.js"></script>
 <script src="js/common.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </html>

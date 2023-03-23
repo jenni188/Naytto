@@ -97,6 +97,34 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col moi">
+      col 1
+      <table class="table">
+        <thead>
+        <tbody>
+        <tr>
+          <th scope="col">koira</th>
+          <th scope="col">kissa</th>
+          <th scope="col">kani</th>
+        </tr>
+        </thead>
+        <tr>
+          <td>hinta 1e</td>
+          <td>hinta 13e</td>
+          <td>hinta 14e</td>
+        </tr>
+        <tr>
+          <td>koodi 21</td>
+          <td>koodi 44</td>
+          <td>koodi</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 </body>
 <script src="js/index.js"></script>
 <script src="js/common.js"></script>
