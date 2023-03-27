@@ -29,7 +29,7 @@ tietojen tuonti tietokannasta yhdelle haulle?*
 
 
 ETUSIVU(ADMIN)
-
+kuvat muokkaukseen
 
 YHTEYSTIEDOT(ADMIN)*
 
