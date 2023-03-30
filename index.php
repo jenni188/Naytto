@@ -47,49 +47,15 @@
         </div>
   </div>
   <div class="row ">
-    <div class="col-sm moi ">
+    <div class="col-sm " id="radio">
       One of three columns
-      <div class="form-check">
-          <input class="form-check-input" type="radio" name="optionsRadios" checked="" onclick="showProducts('all')">
-          <label class="form-check-label" for="optionsRadios1">Show All</label>
-      </div>
-      <div class="form-check">
-          <input class="form-check-input" type="radio" name="optionsRadios" onclick="showProducts('paintings')">
-          <label class="form-check-label" for="optionsRadios2">Show Paintings</label>
-      </div>
-      <div class="form-check">
-          <input class="form-check-input" type="radio" name="optionsRadios" onclick="showProducts('cards')">
-          <label class="form-check-label" for="optionsRadios3">Show Cards</label>
-      </div>
+
     </div>
-    <div class="col-8" id="order-col">
+    <div class=" col-sm-12 col-lg-8" id="order-col">
       One of three columns
-      <div class="row " id="productRow">
-        <div class="col product-col moi">
-            <div class="row img-row">
-              <div class="col kuva-col moi">
-                tänne kuva
-                <img src="" alt="">
-              </div>
-            </div>
-            <div class="row info-row">
-              <div class="col info-col moi">
-                 tänne tiedot li elementteihin
-                <ul class="product-ul">
-                  li elementit
-                </ul>
-              </div>
-            </div>
-        </div>
-        <div class="col moi">
-            one of 4
-        </div>
-        <div class="col moi">
-            one of 4
-        </div>
-        <div class="col moi">
-            one of 4
-        </div>
+      tänne tuotteet
+      <div class="row" id="order-row">
+        <div></div>
       </div>
     </div>
     <div class="col-sm moi">
@@ -97,12 +63,6 @@
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col moi">
-      col 1
-    </div>
-  </div>
 </div>
 </body>
 <script src="js/index.js"></script>

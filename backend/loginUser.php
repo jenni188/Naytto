@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_POST['username']) || !isset($_POST['password'])){ 
+if (!isset($_POST['username']) || !isset($_POST['pwd'])){ 
     $data = array(
         'error'=> 'POST-dataa ei saatavilla. '
     );
@@ -10,7 +10,7 @@ if (!isset($_POST['username']) || !isset($_POST['password'])){
 }
 
 $username = $_POST['username'];
-$password = $_POST['password'];
+$pwd = $_POST['pwd'];
 
 
 include_once 'pdo-connect.php';
@@ -25,13 +25,13 @@ try {
     } else{
         // käyttäjä löytyi
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        if (password_verify($password, $result['pwd'])) {
+        if (password_verify($pwd, $result['pwd'])) {
              $data = array(
                  'success'=> 'Login was successfull!'
              );
 
              $_SESSION['logged_in'] = true;
-             $_SESSION['user_id'] = $result['id'];
+             $_SESSION['userid'] = $result['id'];
              $_SESSION['username'] = $result['username'];
 
         } else{

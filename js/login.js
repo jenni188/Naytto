@@ -4,14 +4,14 @@ function loginUser(event){
     event.preventDefault();
 
     const username = document.forms['login']['username'].value;
-    const password = document.forms['login']['password'].value;
+    const pwd = document.forms['login']['pwd'].value;
 
     if (username.length <= 0){
         showMessage('error','Username is required!');
         return;
     }
 
-    if (password.length <= 2){
+    if (pwd.length <= 2){
         showMessage('error','Password minimum lenght is 6 characters!');
         return;
     }
@@ -20,7 +20,7 @@ function loginUser(event){
         const data = JSON.parse(this.responseText);
         
         if (data.hasOwnProperty('success')){
-            window.location.href = "admin.php?type=success&msg=Wellcome!";
+            window.location.href = "homeAdmin.php?type=success&msg=Wellcome!";
             return;
         } else{
             showMessage('error', 'Login failed!');
@@ -28,5 +28,5 @@ function loginUser(event){
     }
     ajax.open("POST" , "backend/loginUser.php", true);
     ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    ajax.send(`username=${username}&password=${password}`);
+    ajax.send(`username=${username}&pwd=${pwd}`);
 }

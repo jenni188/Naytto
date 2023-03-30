@@ -10,7 +10,7 @@ sähköpostin kasaus
 
 ETUSIVU
 tuotteiden suodatus?
-tuotteiden jäjestely 5per rivi?
+tuotteiden jäjestely 5per rivi?* 
 kuvien tuonti tietokannasta?
 
 

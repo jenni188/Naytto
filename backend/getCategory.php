@@ -3,7 +3,7 @@
 include_once 'pdo-connect.php';
 
 try{
-    $stmt = $conn->prepare("SELECT id, category, name, img, code, price FROM product");
+    $stmt = $conn->prepare("SELECT DISTINCT category FROM product");
     
 
     if ($stmt -> execute() == false){
