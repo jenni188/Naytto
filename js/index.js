@@ -1,10 +1,12 @@
-document.body.addEventListener('load', getProducts(), getCategory());
-document.getElementById('radio-buttons').addEventListener('click', filterProducts());
+window.addEventListener('load', getData);
+document.getElementById('radio-buttons').addEventListener('click', showProducts);
 
 let data = null;
+let categories = null;
 
-function filterProducts(){
-    alert('virttu')
+function getData(){
+    getProducts()
+    getCategory()
 }
 
 function getProducts(){
@@ -26,7 +28,7 @@ function getCategory(){
 
     let ajax = new XMLHttpRequest();
     ajax.onload = function(){
-        data = JSON.parse(this.responseText);
+        categories = JSON.parse(this.responseText);
         showRadio();
     }
 
@@ -39,24 +41,24 @@ let buttonCount = 1;
 function showRadio(){
 
     buttonCount++;
-    console.log(data);
 
     const div = document.getElementById('radio-buttons');
 
 
-    data.forEach(filters =>{
+    categories.forEach(filters =>{
         const div2 = document.createElement('div');
         div2.localName = 'form check';
     
         const i = document.createElement('input');
         i.className = 'form-check-input';
         i.type = 'radio';
-        i.name = 'optionsRadio';
+        i.name = 'optionsradio';
         i.setAttribute('id', filters.category);
+        i.setAttribute('value', filters.category)
 
         const label = document.createElement('label');
         label.className = 'form-check-label';
-        label.htmlFor = 'optionsRadio' + buttonCount;
+        label.htmlFor = 'optionsradio' + buttonCount;
         const labelText = document.createTextNode('Show ' + filters.category);
         label.appendChild(labelText);
 
@@ -76,8 +78,8 @@ function showProducts(){
     div.innerHTML = "";
 
     console.log(data)
-
-    let category = 'moikka'
+    console.log('category value',  document.querySelector('input[name=optionsradio]:checked').value)
+    let category = document.querySelector('input[name=optionsradio]:checked').value;
 
 
     // if(document.getElementById('gender_Male').checked) {
@@ -90,7 +92,7 @@ function showProducts(){
         return product.category === category
     })
 
-    console.log(productToShow)
+    console.log('productToShow', productToShow)
 
     productToShow.forEach(product => {
              
