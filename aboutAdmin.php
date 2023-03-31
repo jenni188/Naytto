@@ -54,7 +54,7 @@
     </div>
     <div class="col-6" id="order-col">
       One of three columns
-      
+      <h3>Welcome Admin</h3>
       <ul id="about-ul">
       </ul>
       <button class="btn btn-primary btn-md float-end " id="create-btn">Create New</button>

@@ -53,7 +53,7 @@
       <form name="editProduct" >
       <input type="hidden" name="id">
         <fieldset>
-            <legend>Create New Product</legend>
+            <legend>Edit Product</legend>
             <div class="form-group">
                 <label for="p-name" class="form-label mt-3">Product Name</label>
                 <input type="text" id="p-name" name="p-name" class="form-control" placeholder="Product Name">

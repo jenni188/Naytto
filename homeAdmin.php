@@ -49,6 +49,7 @@
   <div class="row ">
     <div class="col-sm moi ">
       One of three columns
+      
       <div class="form-check">
           <input class="form-check-input" type="radio" name="optionsRadios" checked="" onclick="showProducts('all')">
           <label class="form-check-label" for="optionsRadios1">Show All</label>
@@ -63,6 +64,7 @@
       </div>
     </div>
     <div class="col-8" id="order-col">
+    <h3>Welcome Admin</h3>
       One of three columns
       <div class="row " id="productRow">
         <div class="col product-col moi">
@@ -94,7 +96,7 @@
     </div>
     <div class="col-sm moi">
       One of three columns
-      <button class="btn btn-primary btn-md float-end " id="createProduct-btn">Create New</button>
+      <button class="btn btn-primary btn-md float-end " id="createProduct-btn">Create New Product</button>
     </div>
   </div>
 </div>

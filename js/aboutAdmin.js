@@ -41,6 +41,7 @@ function showText1(){
         h2.appendChild(h2Text);
 
         const p = document.createElement('p');
+        p.className = 'row-3';
         const pText = document.createTextNode(text.text);
         p.appendChild(pText);
 

@@ -1,6 +1,11 @@
-document.body.addEventListener('load', getProducts(), getCategory())
+document.body.addEventListener('load', getProducts(), getCategory());
+document.getElementById('radio-buttons').addEventListener('click', filterProducts());
 
 let data = null;
+
+function filterProducts(){
+    alert('virttu')
+}
 
 function getProducts(){
     console.log("haetaan data")
@@ -36,8 +41,7 @@ function showRadio(){
     buttonCount++;
     console.log(data);
 
-    const div = document.getElementById('radio');
-    div.innerHTML = "";
+    const div = document.getElementById('radio-buttons');
 
 
     data.forEach(filters =>{
@@ -52,7 +56,7 @@ function showRadio(){
 
         const label = document.createElement('label');
         label.className = 'form-check-label';
-        label.for = 'optionsradio' + buttonCount;
+        label.htmlFor = 'optionsRadio' + buttonCount;
         const labelText = document.createTextNode('Show ' + filters.category);
         label.appendChild(labelText);
 

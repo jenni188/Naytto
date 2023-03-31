@@ -64,7 +64,7 @@
             </div>
             <div class="form-group">
                 <label for="text" class="form-label mt-4">Text</label>
-                <input name="text" type="text" class="form-control">
+                <textarea name="text" type="text" class="form-control" rows="10"></textarea>
             </div>
             </fieldset>
             <button type="submit" class="btn btn-primary mt-3" id="reg-btn">Save Text Changes</button>

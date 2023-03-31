@@ -8,6 +8,7 @@ function newText(event){
 
     if(heading.length <= 0 || text.length <= 0 ){
         showMessage('error', 'heading and text must be filled!')
+        return;
     }
 
     let postData = `heading=${heading}&text=${text}`;

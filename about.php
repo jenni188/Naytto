@@ -52,7 +52,7 @@
     <div class="col-3 moi ">
       One of three columns
     </div>
-    <div class="col-6" id="order-col">
+    <div class="col-sm-6 col-lg-10" id="order-col">
       One of three columns
       <ul id="about-ul">
         <li class="list-group-item">

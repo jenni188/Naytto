@@ -20,7 +20,7 @@ try{
     if($stmt->execute() == false){
         $data['error'] = 'Error modifying product';
     } else{
-        $data['success'] = 'Text edit success';
+        $data['success'] = 'Product edit success';
     }
 }catch (PDOException $e){
     $data['error'] = $e->getMessage();

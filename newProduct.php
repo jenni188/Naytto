@@ -50,7 +50,7 @@
     </div>
     <div class="col-6" id="order-col">
       One of three columns
-      <form name="p-form" >
+      <form name="p-form"  action="createNewProduct.php" method="post" enctype="multipart/form-data">
         <fieldset>
             <legend>Create New Product</legend>
             <div class="form-group">
