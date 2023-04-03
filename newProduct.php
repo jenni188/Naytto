@@ -71,7 +71,7 @@
             </div>
             <div class="form-group">
             <label for="p-img" class="form-label mt-3">Product Image</label>
-            <input name="p-img" type="file" class="form-control" id="p-img" placeholder="Product Image">
+            <input name="productimage" type="file" class="form-control" id="productimage" placeholder="Product Image">
             </div>
         </fieldset>
         <button type="submit" class="btn btn-primary mt-3" id="createP">Create Product</button>

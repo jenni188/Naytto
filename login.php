@@ -42,7 +42,7 @@
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input name="pwd" type="pwd"  class="form-control"  placeholder="Password"/>
+                    <input name="pwd" type="password"  class="form-control"  placeholder="Password"/>
                     <label class="form-label" for="pwd">Password</label>
                   </div>
 
