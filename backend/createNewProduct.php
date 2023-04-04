@@ -1,11 +1,13 @@
 <?php
 
+// Get normal form-fields
+$name = $_POST['p-name'];
+$price = $_POST['p-price'];
+$code = $_POST['p-code'];
+$category = $_POST['p-category'];
 
-$name = $_POST['name'];
-$price = $_POST['price'];
-$code = $_POST['code'];
-$category = $_POST['category'];
-$img = $_POST['img'];
+// Get imagefile
+$imageData = file_get_contents($_FILES['productimage']['tmp_name']);
 
 include_once 'pdo-connect.php';
 
@@ -15,7 +17,9 @@ try{
     $stmt-> bindParam('price', $price);
     $stmt-> bindParam('code', $code);
     $stmt-> bindParam('category', $category);
-    $stmt-> bindParam('img', $img);
+    
+    // Bind imagefile as large object
+    $stmt-> bindParam('img', $imageData, PDO::PARAM_LOB);
 
     if ($stmt -> execute() == false){
         $data = array(
