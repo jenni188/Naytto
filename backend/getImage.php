@@ -1,9 +1,28 @@
 <?php
+//getting product images to fron and admin page
+
+//check if logged in
+session_start();
+
+if (!isset($_SESSION['user_id'])){
+    $data = array(
+        'error'=> 'You are not allowed here!'
+    );
+    header('Location: ../index.php');
+    die();
+
+}
+//check if there is a product id
+if (!isset($_GET['id'])){
+    header('Location: ../about.php');
+}
 
 $productid = $_GET['id'];
 
+//connection to database
 include_once 'pdo-connect.php';
 
+//get image data from database
 try{
     $stmt = $conn->prepare("SELECT img FROM product WHERE id = :productid");
     $stmt->bindParam(':productid', $productid);
@@ -17,7 +36,6 @@ try{
         die();
     }else {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        // header("Content-type: " . $row->type);
         echo '<img src="'.$row['img'].'" />';
         
     }
@@ -29,16 +47,3 @@ try{
     echo json_encode($data);
     die();
 }
-
-
-	
-
-// $sql = "SELECT * FROM `images` WHERE `id` = " . $_GET["id"];
-// 	$result = mysqli_query($conn, $sql);
-// 	if (mysqli_num_rows($result) == 0)
-// 	{
-// 		die("File does not exists.");
-// 	}
-// 	$row = mysqli_fetch_object($result);
-//     header("Content-type: " . $row->type);
-// 	echo $row->image;

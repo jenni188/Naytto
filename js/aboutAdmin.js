@@ -1,7 +1,10 @@
+//about admin page js
+
 document.body.addEventListener('load', getText1());
 document.getElementById('about-ul').addEventListener('click', openText);
 document.getElementById('create-btn').addEventListener('click', openNew);
 
+//open to crete new text
 function openNew(){
     window.location.href = "newText.php";
 }
@@ -9,6 +12,7 @@ function openNew(){
 
 let data = null;
 
+//getting text data from data base
 function getText1(){
     console.log('Haetaann data');
 
@@ -25,6 +29,7 @@ function getText1(){
 
 }
 
+//show text on page by creatig li elements
 function showText1(){
 
     const ul = document.getElementById('about-ul');
@@ -70,7 +75,7 @@ function showText1(){
 
 }
 
-
+//open text edit page or delete the chosen text
 function openText(event){
     console.log(event.target.dataset);
     const action = event.target.dataset.action;
@@ -88,10 +93,12 @@ function openText(event){
     }
 }
 
+//opening edit text page
 function editText(id){
     window.location.href = "editText.php?id=" + id;
 }
 
+//deleting the chosen text li
 function deleteText(id){
     let ajax = new XMLHttpRequest();
     ajax.onload = function(){

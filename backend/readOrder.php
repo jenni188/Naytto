@@ -1,4 +1,5 @@
 <?php
+//reading the order form and sending it as an email to halla
 
 // if (!isset($_POST['fname']) || !isset($_POST['product0'])){
 //     $data = array(

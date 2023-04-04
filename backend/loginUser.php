@@ -1,6 +1,8 @@
 <?php
-session_start();
+//to login as admin
 
+session_start();
+// check if there is a username and password
 if (!isset($_POST['username']) || !isset($_POST['pwd'])){ 
     $data = array(
         'error'=> 'POST-dataa ei saatavilla. '
@@ -9,12 +11,14 @@ if (!isset($_POST['username']) || !isset($_POST['pwd'])){
 
 }
 
+//prepare variables
 $username = $_POST['username'];
 $pwd = $_POST['pwd'];
 
-
+//connection to database
 include_once 'pdo-connect.php';
 
+//get user data from database
 try {
     $stmt = $conn -> prepare("SELECT id, username, pwd FROM user WHERE username = :username");
     $stmt-> bindParam('username', $username);

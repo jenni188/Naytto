@@ -1,15 +1,21 @@
 <?php
+//getting products to admin front page
+
 session_start();
 
+//check if logged in
 if (!isset($_SESSION['user_id'])){
     $data = array(
         'error'=> 'You are not allowed here!'
     );
+    header('Location: ../index.php');
     die();
 }
 
+//connection to database
 include_once 'pdo-connect.php';
 
+//get product data from database
 try{
     $stmt = $conn->prepare("SELECT id, category, name, img, code, price FROM product");
     

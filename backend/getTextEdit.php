@@ -1,14 +1,32 @@
 <?php
+//getting text to edit text page
 
+//check if logged in
+session_start();
+
+//check if logged in
+if (!isset($_SESSION['user_id'])){
+    $data = array(
+        'error'=> 'You are not allowed here!'
+    );
+    header('Location: ../index.php');
+    die();
+
+}
+
+
+//check if there
 if (!isset($_GET['id'])){
     header('Location: ../about.php');
 }
 
-
+//prepare variable
 $textid = $_GET['id'];
 
+//connection to database
 include_once 'pdo-connect.php';
 
+//get text data from database
 try{
     $stmt = $conn->prepare("SELECT id, heading, text FROM texts WHERE  id = :textid");
 

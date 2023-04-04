@@ -1,7 +1,10 @@
 <?php
+//getting text to about page
 
+//connection to datanbase
 include_once 'pdo-connect.php';
 
+//get text data from database
 try{
     $stmt = $conn->prepare("SELECT id, heading, text FROM texts");
 

@@ -1,12 +1,32 @@
 <?php
+//to modify text data 
 
+session_start();
 
+//check if logged in
+if (!isset($_SESSION['user_id'])){
+    $data = array(
+        'error'=> 'You are not allowed here!'
+    );
+    header('Location: ../index.php');
+    die();
+
+}
+
+//check if there is a text id
+if (!isset($_GET['id'])){
+    header('Location: ../homeAdmin.php');
+}
+
+//prepare variables
 $json = file_get_contents('php://input');
 $textData = json_decode($json);
 $data = array();
 
+//connection to database
 include_once 'pdo-connect.php';
 
+//updating data to text in database
 try{
     $stmt = $conn->prepare("UPDATE texts SET heading = :heading, text = :text WHERE id = :id");
     $stmt->bindParam(":heading", $textData->heading);

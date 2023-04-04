@@ -1,7 +1,10 @@
+// about page js
+
 document.body.addEventListener('load', getText());
 
 let data = null;
 
+//get text data from database
 function getText(){
     console.log('Haetaann data');
 
@@ -18,6 +21,7 @@ function getText(){
 
 }
 
+//show text on page by creatig li elements
 function showText(){
 
     const ul = document.getElementById('about-ul');
@@ -45,10 +49,3 @@ function showText(){
     });
 
 }
-
-{/* <li class="list-group-item">
-<h2>
-</h2>
-<p>    
-</p>
-</li> */}

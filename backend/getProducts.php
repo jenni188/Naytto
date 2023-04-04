@@ -1,7 +1,10 @@
 <?php
+//getting products to front page
 
+//connection to database
 include_once 'pdo-connect.php';
 
+//get product data from database
 try{
     $stmt = $conn->prepare("SELECT id, category, name, img, code, price FROM product");
     

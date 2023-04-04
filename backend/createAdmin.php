@@ -1,10 +1,15 @@
 <?php
+//creating an admin user
+//THIS FILE HAS TO BE REMOVED AFTER CREATING ONE USER!!
+
+//prepare varialbles
 $username = $_GET['username'];
 $password = password_hash($_GET['password'], PASSWORD_DEFAULT);
 
+//connection to database
 include_once 'pdo-connect.php';
 
-
+//insert user data to database
 try {
     $stmt = $conn -> prepare("INSERT INTO user (username, pwd) VALUES (:username, :pwd) ");
     $stmt-> bindParam('username', $username);
