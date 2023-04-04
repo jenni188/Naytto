@@ -4,7 +4,7 @@
 $name = $_POST['p-name'];
 $price = $_POST['p-price'];
 $code = $_POST['p-code'];
-$category = $_POST['p-cateory'];
+$category = $_POST['p-category'];
 
 // Get imagefile
 $imageData = file_get_contents($_FILES['productimage']['tmp_name']);
