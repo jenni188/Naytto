@@ -1,4 +1,9 @@
+<?php session_start(); ?>
 <?php
+if (!isset($_SESSION['logged_in'])){
+  header('Location: index.php');
+  die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,13 +35,34 @@
           <a class="nav-link" href="order.php">Order form</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="about.php">About
-          <span class="visually-hidden">(current)</span>
-          </a>
+          <a class="nav-link " href="about.php">About</a>
         </li>
+        <?php if (isset($_SESSION['logged_in'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link active" href="aboutAdmin.php">about Admin
+            <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+        <?php endif; ?> 
+        <?php if (isset($_SESSION['logged_in'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="homeAdmin.php">Home admin</a>	
+          </li>
+        <?php endif; ?>  
+        <?php if (isset($_SESSION['logged_in'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="logout.php">Log out</a>	
+          </li>
+        <?php endif; ?> 
       </ul>
     </div>
+
   </div>
+  <?php if (isset($_SESSION['logged_in'])): ?>
+      <div>
+        <p class="login-p">Logged in user: <?php echo $_SESSION['username']?></p>
+      </div>
+  <?php endif; ?> 
 </nav>
 <div id="msg" class="alert alert-dismissible alert-danger d-none">
     <h4 class="alert-heading">Warning!</h4>

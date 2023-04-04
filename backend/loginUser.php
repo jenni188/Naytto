@@ -31,7 +31,7 @@ try {
              );
 
              $_SESSION['logged_in'] = true;
-             $_SESSION['id'] = $result['id'];
+             $_SESSION['user_id'] = $result['id'];
              $_SESSION['username'] = $result['username'];
 
         } else{

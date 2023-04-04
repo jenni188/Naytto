@@ -1,4 +1,9 @@
+<?php session_start(); ?>
 <?php
+if (!isset($_SESSION['logged_in'])){
+  header('Location: index.php');
+  die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +27,7 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="index.php">Home
-            <span class="visually-hidden">(current)</span>
-          </a>
+          <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="order.php">Order form</a>
@@ -32,9 +35,31 @@
         <li class="nav-item">
           <a class="nav-link" href="about.php">About</a>
         </li>
+        <?php if (isset($_SESSION['logged_in'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutAdmin.php">about admin</a>	
+          </li>
+        <?php endif; ?>
+        <?php if (isset($_SESSION['logged_in'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link active" href="homeAdmin.php">Home admin
+            <span class="visually-hidden">(current)</span>
+            </a>	
+          </li>
+        <?php endif; ?>  
+        <?php if (isset($_SESSION['logged_in'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="logout.php">Log out</a>	
+          </li>
+        <?php endif; ?> 
       </ul>
     </div>
   </div>
+  <?php if (isset($_SESSION['logged_in'])): ?>
+      <div>
+        <p class="login-p">Logged in user: <?php echo $_SESSION['username']?></p>
+      </div>
+  <?php endif; ?> 
 </nav>
 <div id="msg" class="alert alert-dismissible alert-danger d-none">
         <h4 class="alert-heading">Warning!</h4>
@@ -63,7 +88,7 @@
           <label class="form-check-label" for="optionsRadios3">Show Cards</label>
       </div>
     </div>
-    <div class="col-8" id="order-col">
+    <div class="col-sm-12 col-lg-8" id="order-col">
     <h3>Welcome Admin</h3>
       One of three columns
       <div class="row " id="productRow">

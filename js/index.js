@@ -114,13 +114,13 @@ function showProducts(){
         const hText = document.createTextNode(product.name);
         h.appendChild(hText);
 
-        const price = document.createElement('p');
-        price.className = 'card-text';
+        const price = document.createElement('li');
+        price.className = 'list-group-item';
         const pText = document.createTextNode("Price: " + product.price + "€");
         price.appendChild(pText);
 
-        const code = document.createElement('p');
-        code.className = 'card-text';
+        const code = document.createElement('li');
+        code.className = 'list-group-item';
         const cText = document.createTextNode("Product code: " + product.code);
         code.appendChild(cText);
 

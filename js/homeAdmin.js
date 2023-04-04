@@ -19,7 +19,7 @@ function getProducts1(){
         showProducts();
     }
 
-    ajax.open("GET", "backend/getProducts.php");
+    ajax.open("GET", "backend/getProductsAdmin.php");
     ajax.send();
 }
 
@@ -31,42 +31,13 @@ function showProducts(){
 
     data.forEach(product => {
 
-            
-                
-        const divCol = document.createElement('div');
-        divCol.className = 'col';
-        divCol.dataset.productid = product.id;
-
-        const divRow1 = document.createElement('div');
-        divRow1.className = 'row'
-        const divCol1 = document.createElement('div')
-        divCol1.classList = 'col'
-
-        const divRow2 = document.createElement('div');
-        divRow2.className = 'row'
-        const divCol2 = document.createElement('div')
-        divCol2.classList = 'col'
-        const ul = document.createElement('ul')
-
-
-
-        const h5 = document.createElement('h5');
-        const h5Text = document.createTextNode(product.name);
-        h5.appendChild(h5Text);
-
-        const liPrice = document.createElement('li');
-        liPrice.className = 'list-group-item';
-        const priceText = document.createTextNode("Price: " + product.price + "€");
-        liPrice.appendChild(priceText);
-
-        const liCode = document.createElement('li');
-        liCode.className = 'list-group-item';
-        const codeText = document.createTextNode("Product code: " + product.code);
-        liCode.appendChild(codeText);
+        const col1 = document.createElement('div');
+        col1.className = 'col col-sm-3'
+        col1.dataset.productid = product.id;
 
         const newDeleteBtn = document.createElement('button');
         newDeleteBtn.dataset.action = 'delete';
-        newDeleteBtn.className = 'btn btn-primary btn-sm ml-3';
+        newDeleteBtn.className = 'btn btn-primary btn-sm';
         const deleteText = document.createTextNode('delete');
         newDeleteBtn.appendChild(deleteText);
 
@@ -75,28 +46,98 @@ function showProducts(){
         newEditBtn.className = 'btn btn-warning btn-sm ';
         const editText = document.createTextNode('edit');
         newEditBtn.appendChild(editText);
+            
+        const card = document.createElement('div');
+        card.className = 'card product-card';
 
-        ul.appendChild(h5);
-        ul.appendChild(liPrice);
-        ul.appendChild(liCode);
+        const img = document.createElement('img');
+        img.className = 'card-img-top';
 
-        divRow1.appendChild(divCol1);
+        const body = document.createElement('div');
+        body.className = ' card-body';
 
-        divRow2.appendChild(divCol2);
-       
-        divCol2.appendChild(ul);
+        const h = document.createElement('h5');
+        h.className = 'card-title';
+        const hText = document.createTextNode(product.name);
+        h.appendChild(hText);
 
-        divCol.appendChild(divRow1);
-        divCol.appendChild(divRow2);
+        const price = document.createElement('p');
+        price.className = 'card-text';
+        const pText = document.createTextNode("Price: " + product.price + "€");
+        price.appendChild(pText);
 
-        divCol.appendChild(newDeleteBtn);
-        divCol.appendChild(newEditBtn);
+        const code = document.createElement('p');
+        code.className = 'card-text';
+        const cText = document.createTextNode("Product code: " + product.code);
+        code.appendChild(cText);
 
-        div.appendChild(divCol)
+        body.appendChild(h);
+        body.appendChild(price);
+        body.appendChild(code);
+
+        col1.appendChild(card);
+        col1.appendChild(img);
+        col1.appendChild(body);
+        col1.appendChild(newDeleteBtn);
+        col1.appendChild(newEditBtn);
+
+        div.appendChild(col1);
             
         
     });
 }
+
+// const divCol = document.createElement('div');
+// divCol.className = 'col';
+
+
+// const divRow1 = document.createElement('div');
+// divRow1.className = 'row'
+// const divCol1 = document.createElement('div')
+// divCol1.classList = 'col'
+
+// const divRow2 = document.createElement('div');
+// divRow2.className = 'row'
+// const divCol2 = document.createElement('div')
+// divCol2.classList = 'col'
+// const ul = document.createElement('ul')
+
+
+
+// const h5 = document.createElement('h5');
+// const h5Text = document.createTextNode(product.name);
+// h5.appendChild(h5Text);
+
+// const liPrice = document.createElement('li');
+// liPrice.className = 'list-group-item';
+// const priceText = document.createTextNode("Price: " + product.price + "€");
+// liPrice.appendChild(priceText);
+
+// const liCode = document.createElement('li');
+// liCode.className = 'list-group-item';
+// const codeText = document.createTextNode("Product code: " + product.code);
+// liCode.appendChild(codeText);
+
+
+
+// ul.appendChild(h5);
+// ul.appendChild(liPrice);
+// ul.appendChild(liCode);
+
+// divRow1.appendChild(divCol1);
+
+// divRow2.appendChild(divCol2);
+
+// divCol2.appendChild(ul);
+
+// divCol.appendChild(divRow1);
+// divCol.appendChild(divRow2);
+
+// divCol.appendChild(newDeleteBtn);
+// divCol.appendChild(newEditBtn);
+
+// div.appendChild(divCol)
+
 
 function openProduct(event){
     console.log(event.target.dataset);
