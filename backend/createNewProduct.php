@@ -1,4 +1,14 @@
 <?php
+//creating a new product
+
+// tarkistetaan onko kirjautunut
+session_start();
+if (!isset($_SESSION['user_id'])){
+    $data = array(
+        'error'=> 'You are not allowed here!'
+    );
+    die();
+}
 
 // Get normal form-fields
 $name = $_POST['p-name'];
@@ -9,6 +19,7 @@ $category = $_POST['p-category'];
 // Get imagefile
 $imageData = file_get_contents($_FILES['productimage']['tmp_name']);
 
+//connection to database
 include_once 'pdo-connect.php';
 
 try{
