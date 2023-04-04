@@ -72,7 +72,7 @@ function showRadio(){
 
 
 
-function showProducts(){
+async function showProducts(){
 
     const div = document.getElementById('order-row');
     div.innerHTML = "";
@@ -94,9 +94,8 @@ function showProducts(){
 
     console.log('productToShow', productToShow)
 
-    productToShow.forEach(product => {
+    productToShow.forEach(async product => {
              
-
         const col1 = document.createElement('div');
         col1.className = 'col col-sm-3'
             
@@ -105,6 +104,9 @@ function showProducts(){
 
         const img = document.createElement('img');
         img.className = 'card-img-top';
+
+        // Get the image from database by id
+        img.src = `backend/getImage.php?id=${product.id}`
 
         const body = document.createElement('div');
         body.className = ' card-body';
@@ -135,28 +137,3 @@ function showProducts(){
         div.appendChild(col1);
     });
 }
-
-
-// <div class="card" style="width: 18rem;">
-// <img class="card-img-top" src="..." alt="Card image cap">
-// <div class="card-body">
-//   <h5 class="card-title">Card title</h5>
-//   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-// </div>
-
-
-{/* <div class="col product-col moi">
-    <div class="row img-row">
-        <div class="col kuva-col moi">
-                tänne kuva
-        </div>
-    </div>
-    <div class="row info-row">
-        <div class="col info-col moi">
-            tänne tiedot li elementteihin
-            <ul class="product-ul">
-                  li elementit
-            </ul>
-        </div>
-    </div>
-</div> */}

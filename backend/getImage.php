@@ -1,8 +1,9 @@
 <?php
-
-$productid = $_GET['id'];
+ob_start();
 
 include_once 'pdo-connect.php';
+
+$productid = $_GET['id'];
 
 try{
     $stmt = $conn->prepare("SELECT img FROM product WHERE id = :productid");
@@ -15,11 +16,14 @@ try{
         header("Content-type: application/json;charset=utf-8");
         echo json_encode($data);
         die();
-    }else {
+    } else {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        // header("Content-type: " . $row->type);
-        echo '<img src="'.$row['img'].'" />';
-        
+        $imageData = $row['img'];
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $contentType = finfo_buffer($finfo, $imageData);
+        ob_end_clean();
+        header("Content-Type: " . $contentType);
+        echo $imageData;     
     }
 }catch(PDOException $e){
     $data = array(
