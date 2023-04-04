@@ -3,26 +3,28 @@ document.forms['p-form'].addEventListener('submit', createNewP);
 function createNewP(event){
     event.preventDefault();
 
-    const formElement = document.querySelector("form");
-    const formData = new FormData(formElement);
-    formData.append('uploadimage', productimage.files[0])
-
+    // Check ir all fields are set
     const name = document.forms['p-form']['p-name'].value;
     const price = document.forms['p-form']['p-price'].value;
     const code = document.forms['p-form']['p-code'].value;
     const category = document.forms['p-form']['p-category'].value;
-    // const img = document.forms['p-form']['p-img'].value;
-
+    
     if (name.length <= 0 || code.length <= 0 || category.length <= 0|| price.length <= 0){
         showMessage('error', 'Name, code, price and category must be set!');
         return;
     }
 
-    // let postData = `name=${name}&price=${price}&code=${code}&category=${category}&img=${img}`;
-    // let postData = `name=${name}&price=${price}&code=${code}&category=${category}`;
-    // postData.append("file", productimage.files[0]);
-
-    console.log(formData);
+    // Create new FormData object
+    const formData = new FormData(document.forms['p-form']);
+    
+    // // Get the uploaded file input element
+    // var fileInput = document.forms['p-form'].querySelector('input[type="file"]');
+  
+    // // Get the File object from the input element
+    // var file = fileInput.files[0];
+    
+    // // Append the File object to the FormData object
+    // formData.append('bar', file);
     
     let ajax = new XMLHttpRequest();
     ajax.onload = function(){
@@ -35,6 +37,6 @@ function createNewP(event){
     }
 
     ajax.open("POST" , "backend/createNewProduct.php", true);
-    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     ajax.send(formData);
 }
