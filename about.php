@@ -1,10 +1,4 @@
 <?php session_start(); ?>
-<?php
-if (!isset($_SESSION['logged_in'])){
-  header('Location: index.php');
-  die();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

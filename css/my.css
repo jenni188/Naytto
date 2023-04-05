@@ -18,7 +18,7 @@
 
 .order-b{
     background-image: url("../img/tausta.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: auto;
 
     height: 100%;
@@ -26,7 +26,7 @@
 }
 
 .moikka{
-    background-image: url("../img/tausta1.jpg");
+    background-image: url("../img/tausta.jpg");
     background-repeat: no-repeat;
     background-size: auto;
     height: 200px;

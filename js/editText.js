@@ -1,3 +1,4 @@
+// js to edit text elements
 const textQueryString = window.location.search;
 const textParams = new URLSearchParams(textQueryString);
 
@@ -7,6 +8,7 @@ if (textParams.has('id')){
 
 document.forms['editText'].addEventListener('submit', modifyText);
 
+//get text data from database
 function getTextData(id){
     console.log(id);
 
@@ -20,12 +22,14 @@ function getTextData(id){
     ajax.send();
 }
 
+//prepare varialbles 
 function populateTextForm(data){
     document.forms['editText']['id'].value = data.id;
     document.forms['editText']['heading'].value = data.heading;
     document.forms['editText']['text'].value = data.text;
 }
 
+//send data to backend where it will be updated
 function modifyText(event){
     event.preventDefault();
     console.log('save changes');
@@ -33,6 +37,7 @@ function modifyText(event){
 
     let textData = {};
 
+    //variables to an array
     textData.id = document.forms['editText']['id'].value;
     textData.heading = document.forms['editText']['heading'].value;
     textData.text = document.forms['editText']['text'].value;

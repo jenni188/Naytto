@@ -1,3 +1,4 @@
+//js to editing products
 const productQueryString = window.location.search;
 const productParams = new URLSearchParams(productQueryString);
 
@@ -7,6 +8,7 @@ if (productParams.has('id')){
 
 document.forms['editProduct'].addEventListener('submit', modifyProduct);
 
+//get product data from database
 function getProductData(id){
     console.log(id);
 
@@ -20,6 +22,7 @@ function getProductData(id){
     ajax.send();
 }
 
+//prepare variables
 function populateProductForm(data){
     document.forms['editProduct']['id'].value = data.id;
     document.forms['editProduct']['p-name'].value = data.name;
@@ -28,6 +31,7 @@ function populateProductForm(data){
     document.forms['editProduct']['p-category'].value = data.category;
 }
 
+//send data to backend where it will be updated
 function modifyProduct(event){
     event.preventDefault();
     console.log('save changes');
@@ -35,6 +39,7 @@ function modifyProduct(event){
 
     let productData = {};
 
+    // variables to an array
     productData.id = document.forms['editProduct']['id'].value;
     productData.name = document.forms['editProduct']['p-name'].value;
     productData.price = document.forms['editProduct']['p-price'].value;

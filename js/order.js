@@ -60,7 +60,7 @@ function sendOrder(event){
     ajax.onload = function(){
         const data = JSON.parse(this.responseText);
         if (data.hasOwnProperty('success')){
-            window.location.href = "backend/readOrder.php?type=success&msg=New poll inserted"
+            window.location.href = "backend/readOrder.php?type=success&msg=New order inserted"
         } else{
             showMessage('error',data.error);
         }

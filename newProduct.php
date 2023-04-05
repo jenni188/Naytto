@@ -32,7 +32,7 @@ if (!isset($_SESSION['logged_in'])){
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="order.php">Order form</a> 
+          <a class="nav-link" href="order.php">Order form</a> 
         </li>
         <li class="nav-item">
           <a class="nav-link" href="about.php">About</a>

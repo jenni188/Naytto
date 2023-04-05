@@ -1,3 +1,4 @@
+// home page admin js
 document.body.addEventListener('load', getProducts1())
 document.getElementById('productRow').addEventListener('click', openProduct);
 document.getElementById('createProduct-btn').addEventListener('click', openNewProduct);
@@ -5,10 +6,12 @@ document.getElementById('createProduct-btn').addEventListener('click', openNewPr
 
 let data = null;
 
+//open page where you can create new products
 function openNewProduct(){
     window.location.href = "newProduct.php";
 }
 
+//get product data from database
 function getProducts1(){
     console.log("haetaan data")
 
@@ -23,6 +26,7 @@ function getProducts1(){
     ajax.send();
 }
 
+// showing products by creting div and buttons 
 function showProducts(){
 
     const div = document.getElementById('productRow');
@@ -87,6 +91,7 @@ function showProducts(){
     });
 }
 
+
 function openProduct(event){
     console.log(event.target.dataset);
     const action = event.target.dataset.action;
@@ -104,10 +109,12 @@ function openProduct(event){
    }
 }
 
+// open product editing page
 function editProduct(id){
     window.location.href = "editProduct.php?id=" + id;
 }
 
+// delete product div
 function deleteProduct(id){
     let ajax = new XMLHttpRequest();
     ajax.onload = function(){

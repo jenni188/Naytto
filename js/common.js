@@ -1,3 +1,4 @@
+//js to show messages on page if needed
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
