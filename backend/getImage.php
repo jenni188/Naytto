@@ -1,28 +1,12 @@
 <?php
-//getting product images to fron and admin page
-
-//check if logged in
-session_start();
-
-if (!isset($_SESSION['user_id'])){
-    $data = array(
-        'error'=> 'You are not allowed here!'
-    );
-    header('Location: ../index.php');
-    die();
-
-}
-//check if there is a product id
-if (!isset($_GET['id'])){
-    header('Location: ../about.php');
-}
-
-$productid = $_GET['id'];
+ob_start();
 
 //connection to database
 include_once 'pdo-connect.php';
 
 //get image data from database
+$productid = $_GET['id'];
+
 try{
     $stmt = $conn->prepare("SELECT img FROM product WHERE id = :productid");
     $stmt->bindParam(':productid', $productid);
@@ -34,10 +18,14 @@ try{
         header("Content-type: application/json;charset=utf-8");
         echo json_encode($data);
         die();
-    }else {
+    } else {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        echo '<img src="'.$row['img'].'" />';
-        
+        $imageData = $row['img'];
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $contentType = finfo_buffer($finfo, $imageData);
+        ob_end_clean();
+        header("Content-Type: " . $contentType);
+        echo $imageData;     
     }
 }catch(PDOException $e){
     $data = array(
