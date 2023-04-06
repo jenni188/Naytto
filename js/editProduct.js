@@ -29,6 +29,7 @@ function populateProductForm(data){
     document.forms['editProduct']['p-price'].value = data.price;
     document.forms['editProduct']['p-code'].value = data.code;
     document.forms['editProduct']['p-category'].value = data.category;
+    document.forms['editProduct']['p-img'].value = data.category;
 }
 
 //send data to backend where it will be updated
@@ -45,6 +46,7 @@ function modifyProduct(event){
     productData.price = document.forms['editProduct']['p-price'].value;
     productData.code = document.forms['editProduct']['p-code'].value;
     productData.category = document.forms['editProduct']['p-category'].value;
+    productData.category = document.forms['editProduct']['p-img'].value;
 
     let ajax = new XMLHttpRequest();
     ajax.onload = function(){

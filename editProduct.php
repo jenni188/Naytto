@@ -16,9 +16,7 @@ if (!isset($_SESSION['logged_in'])){
     <link rel="stylesheet" href="css/my.css">
     <title>Document</title>
 </head>
-
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Hallavan Art</a>

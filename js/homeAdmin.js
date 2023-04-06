@@ -1,40 +1,107 @@
-// home page admin js
-document.body.addEventListener('load', getProducts1())
-document.getElementById('productRow').addEventListener('click', openProduct);
+window.addEventListener('load', getData1);
+document.getElementById('radio-buttons').addEventListener('click', showProducts1);
+document.getElementById('order-row').addEventListener('click', openProduct);
 document.getElementById('createProduct-btn').addEventListener('click', openNewProduct);
 
-
 let data = null;
+let categories = null;
+
+function getData1(){
+    getProducts1()
+    getCategory1()
+}
 
 //open page where you can create new products
 function openNewProduct(){
     window.location.href = "newProduct.php";
 }
 
-//get product data from database
 function getProducts1(){
     console.log("haetaan data")
 
     let ajax = new XMLHttpRequest();
     ajax.onload = function(){
         data = JSON.parse(this.responseText);
-        console.log(data);
-        showProducts();
+        showProducts1();
     }
 
-    ajax.open("GET", "backend/getProductsAdmin.php");
+    ajax.open("GET", "backend/getProducts.php");
     ajax.send();
 }
 
-// showing products by creting div and buttons 
-function showProducts(){
+function getCategory1(){
+    console.log("haetaan dataa");
 
-    const div = document.getElementById('productRow');
+    let ajax = new XMLHttpRequest();
+    ajax.onload = function(){
+        categories = JSON.parse(this.responseText);
+        showRadio1();
+    }
+
+    ajax.open("GET", "backend/getCategory.php");
+    ajax.send();
+}
+
+let buttonCount = 1;
+
+function showRadio1(){
+
+    buttonCount++;
+
+    const div = document.getElementById('radio-buttons');
+
+
+    categories.forEach(filters =>{
+        const div2 = document.createElement('div');
+        div2.localName = 'form check';
+    
+        const i = document.createElement('input');
+        i.className = 'form-check-input';
+        i.type = 'radio';
+        i.name = 'optionsradio';
+        i.setAttribute('id', filters.category);
+        i.setAttribute('value', filters.category)
+
+        const label = document.createElement('label');
+        label.className = 'form-check-label';
+        label.htmlFor = 'optionsradio' + buttonCount;
+        const labelText = document.createTextNode('Show ' + filters.category);
+        label.appendChild(labelText);
+
+        div2.appendChild(i);
+        div2.appendChild(label);
+
+        div.appendChild(div2);
+    
+    })
+}
+
+
+
+async function showProducts1(){
+
+    const div = document.getElementById('order-row');
     div.innerHTML = "";
 
+    console.log(data)
+    console.log('category value',  document.querySelector('input[name=optionsradio]:checked').value)
+    let category = document.querySelector('input[name=optionsradio]:checked').value;
 
-    data.forEach(product => {
 
+    // if(document.getElementById('gender_Male').checked) {
+
+    productToShow = data.filter((product) => {
+        console.log(product)
+        if (category === 'all') {
+            return true
+        }
+        return product.category === category
+    })
+
+    console.log('productToShow', productToShow)
+
+    productToShow.forEach(async product => {
+             
         const col1 = document.createElement('div');
         col1.className = 'col col-sm-3'
         col1.dataset.productid = product.id;
@@ -57,6 +124,9 @@ function showProducts(){
         const img = document.createElement('img');
         img.className = 'card-img-top';
 
+        // Get the image from database by id
+        img.src = `backend/getImage.php?id=${product.id}`
+
         const body = document.createElement('div');
         body.className = ' card-body';
 
@@ -65,13 +135,13 @@ function showProducts(){
         const hText = document.createTextNode(product.name);
         h.appendChild(hText);
 
-        const price = document.createElement('p');
-        price.className = 'card-text';
+        const price = document.createElement('li');
+        price.className = 'list-group-item';
         const pText = document.createTextNode("Price: " + product.price + "€");
         price.appendChild(pText);
 
-        const code = document.createElement('p');
-        code.className = 'card-text';
+        const code = document.createElement('li');
+        code.className = 'list-group-item';
         const cText = document.createTextNode("Product code: " + product.code);
         code.appendChild(cText);
 
@@ -86,11 +156,8 @@ function showProducts(){
         col1.appendChild(newEditBtn);
 
         div.appendChild(col1);
-            
-        
     });
 }
-
 
 function openProduct(event){
     console.log(event.target.dataset);

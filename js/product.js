@@ -22,7 +22,7 @@ function createNewP(event){
     ajax.onload = function(){
         const data = JSON.parse(this.responseText);
         if (data.hasOwnProperty('success')){
-            window.location.href = "index.php?type=success&msg=New product inserted"
+            window.location.href = "homeAdmin.php?type=success&msg=New product inserted"
         } else{
             showMessage('error',data.error);
         }

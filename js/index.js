@@ -15,7 +15,6 @@ function getProducts(){
     let ajax = new XMLHttpRequest();
     ajax.onload = function(){
         data = JSON.parse(this.responseText);
-        console.log(data);
         showProducts();
     }
 

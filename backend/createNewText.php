@@ -7,6 +7,8 @@ if (!isset($_SESSION['user_id'])){
     $data = array(
         'error'=> 'You are not allowed here!'
     );
+    header("Content-type: application/json;charset=utf-8");
+    echo json_encode($data);
     die();
 }
 
