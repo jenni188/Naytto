@@ -12,6 +12,16 @@ if (!isset($_SESSION['user_id'])){
     die();
 }
 
+//check first
+if (!isset($_POST['text']) || !isset($_POST['heading'])){ 
+    $data = array(
+        'error'=> 'POST-dataa ei saatavilla.'
+    );
+    header("Content-type: application/json;charset=utf-8");
+    echo json_encode($data);
+    die();
+}
+
 // prepare variables
 $heading = $_POST['heading'];
 $text = $_POST['text'];

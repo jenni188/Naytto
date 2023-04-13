@@ -75,17 +75,17 @@ if (!isset($_SESSION['logged_in'])){
         </div>
   </div>
   <div class="row ">
-    <div class="col-3 moi ">
+    <div class="col-sm-3 col-lg-2 moi ">
       
     </div>
-    <div class="col-6" id="order-col">
+    <div class="col-sm-6 col-lg-8" id="order-col">
       One of three columns
       <h3>Welcome Admin</h3>
       <ul id="about-ul">
       </ul>
       <button class="btn btn-primary btn-md float-end " id="create-btn">Create New</button>
     </div>
-    <div class="col-3 moi">
+    <div class="col-sm-3 col-lg-2 moi">
       One of three columns
     </div>
   </div>

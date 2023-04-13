@@ -91,7 +91,8 @@ if (!isset($_SESSION['logged_in'])){
                 <input type="text" id="p-category" name="p-cateory" class="form-control" placeholder="Product Category">
             </div>
             <div class="form-group">
-            <label for="p-img" class="form-label mt-3">Product Image</label>
+            <label for="p-img" class="form-label mt-3">Product Image (Current)</label>
+            <img id="product-image" />
             <input name="p-img" type="file" class="form-control" id="p-img" placeholder="Product Image">
             </div>
         </fieldset>

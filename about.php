@@ -68,10 +68,10 @@
         </div>
   </div>
   <div class="row ">
-    <div class="col-3 moi ">
+    <div class="col-sm-3 col-lg-2 moi ">
       One of three columns
     </div>
-    <div class="col-sm-6 col-lg-10" id="order-col">
+    <div class="col-sm-6 col-lg-8" id="order-col">
       One of three columns
       <ul id="about-ul">
         <li class="list-group-item">
@@ -82,7 +82,7 @@
         </li>
       </ul>
     </div>
-    <div class="col-3 moi">
+    <div class="col-sm-3 col-lg-2 moi">
       One of three columns
     </div>
   </div>

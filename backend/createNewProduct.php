@@ -6,7 +6,19 @@ session_start();
 if (!isset($_SESSION['user_id'])){
     $data = array(
         'error'=> 'You are not allowed here!'
+    ); 
+    header("Content-type: application/json;charset=utf-8");
+    echo json_encode($data);
+    die();
+}
+
+//check first
+if (!isset($_POST['p-code']) || !isset($_POST['p-price'])){ 
+    $data = array(
+        'error'=> 'POST-dataa ei saatavilla.'
     );
+    header("Content-type: application/json;charset=utf-8");
+    echo json_encode($data);
     die();
 }
 

@@ -5,6 +5,7 @@ if (!isset($_SESSION['logged_in'])){
   die();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,7 +89,7 @@ if (!isset($_SESSION['logged_in'])){
             </div>
             <div class="form-group">
                 <label for="text" class="form-label mt-4">Text</label>
-                <input name="text" type="text" class="form-control">
+                <textarea  name="text" type="text"  class=" row-3 form-control" rows="5"></textarea>
             </div>
             </fieldset>
             <button type="submit" class="btn btn-primary mt-3" id="reg-btn">Save Text Changes</button>

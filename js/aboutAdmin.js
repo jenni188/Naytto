@@ -39,9 +39,10 @@ function showText1(){
 
         const newLi = document.createElement('li');
         newLi.dataset.textid = text.id;
-        newLi.className = 'list-group-item';
+        newLi.className = 'list-group-item text-li';
 
         const h2 = document.createElement('h2');
+        h2.className = 'mt-3'
         const h2Text = document.createTextNode(text.heading);
         h2.appendChild(h2Text);
 

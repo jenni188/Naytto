@@ -2,6 +2,15 @@
 //getting categories so products can be filtered
 
 
+//check if logged in
+session_start();
+
+if (isset($_SESSION['user_id'])){
+    $user_id = $_SESSION['user_id'];
+} else {
+    $user_id = false;
+}
+
 //connection to database
 include_once 'pdo-connect.php';
 

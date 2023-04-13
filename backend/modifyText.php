@@ -2,20 +2,15 @@
 //to modify text data 
 
 session_start();
-
-//check if logged in
+// check if logged in
 if (!isset($_SESSION['user_id'])){
     $data = array(
         'error'=> 'You are not allowed here!'
     );
-    header('Location: ../index.php');
+
+    header("Content-type: application/json;charset=utf-8");
+    echo json_encode($data);
     die();
-
-}
-
-//check if there is a text id
-if (!isset($_GET['id'])){
-    header('Location: ../homeAdmin.php');
 }
 
 //prepare variables

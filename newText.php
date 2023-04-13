@@ -83,11 +83,11 @@ if (!isset($_SESSION['logged_in'])){
             <div class="form-group">
 
                 <label for="heading" class="form-label mt-4">Heading</label>
-                <input name="heading" type="text" class="form-control">
+                <input name="heading" id="heading" type="text" class="form-control">
             </div>
             <div class="form-group">
                 <label for="text" class="form-label mt-4">Text</label>
-                <textarea name="text" type="text" class="form-control" rows="10"></textarea>
+                <textarea name="text" type="text" id="text" class="form-control" rows="10"></textarea>
             </div>
             </fieldset>
             <button type="submit" class="btn btn-primary mt-3" id="reg-btn">Save Text Changes</button>

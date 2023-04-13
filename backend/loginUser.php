@@ -7,6 +7,8 @@ if (!isset($_POST['username']) || !isset($_POST['pwd'])){
     $data = array(
         'error'=> 'POST-dataa ei saatavilla. '
     );
+    header("Content-type: application/json;charset=utf-8");
+    echo json_encode($data);
     die();
 
 }

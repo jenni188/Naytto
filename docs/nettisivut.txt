@@ -11,12 +11,12 @@ sähköpostin kasaus
 ETUSIVU
 tuotteiden suodatus?
 tuotteiden jäjestely 5per rivi?* 
-kuvien tuonti tietokannasta?
+kuvien tuonti tietokannasta?*
 
 
 KIRJAUDU SISÄÄN
-väittää salasanaa vääräksi
-salasanan hash
+väittää salasanaa vääräksi*
+salasanan hash*
 
 
 YHTEYSTIETOJA (valmis)
@@ -40,4 +40,4 @@ tekstin lisäys *
 
 LUO UUSI TUOTE(ADMIN)
 admin käyttäjän suodatus?
-kategoria suodatus?
+kategoria suodatus?*
