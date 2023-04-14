@@ -66,21 +66,21 @@
         </div>
   </div>
   <div class="row ">
-    <div class="col-sm " id="radio-buttons">
+    <div class="col " id="radio-buttons">
       One of three columns
         <div>
           <input class="form-check-input" type="radio"  checked="" name="optionsradio" id="all" value="all">
           <label class="form-check-label" for="optionsradio1" >Show All</label>
         </div>
     </div>
-    <div class=" col-sm-12 col-lg-8" id="order-col">
+    <div class=" col-sm-12 col-lg-9" id="order-col">
       One of three columns
       tänne tuotteet
       <div class="row" id="order-row">
         <div></div>
       </div>
     </div>
-    <div class="col-sm moi">
+    <div class="col moi">
       One of three columns
     </div>
   </div>

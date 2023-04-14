@@ -29,7 +29,8 @@ tietojen tuonti tietokannasta yhdelle haulle?*
 
 
 ETUSIVU(ADMIN)
-kuvat muokkaukseen
+kuvat muokkaukseen*
+kuvien koko 
 
 YHTEYSTIEDOT(ADMIN)*
 

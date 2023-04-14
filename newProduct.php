@@ -81,11 +81,11 @@ if (!isset($_SESSION['logged_in'])){
             </div>
             <div class="form-group">
                 <label for="p-price" class="form-label mt-3">Product Price</label>
-                <input type="number" id="p-price" name="p-price" class="form-control" placeholder="Product Price">
+                <input type="number" id="p-price" name="p-price"   min="1" class="form-control" placeholder="Product Price">
             </div>
             <div class="form-group">
                 <label for="p-code" class="form-label mt-3">Product code</label>
-                <input type="number" id="p-code" name="p-code" class="form-control" placeholder="Product Code">
+                <input type="number" id="p-code" name="p-code"   min="1" class="form-control" placeholder="Product Code">
             </div>
             <div class="form-group">
                 <label for="p-category" class="form-label mt-3">Product Category</label>

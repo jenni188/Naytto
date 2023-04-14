@@ -96,13 +96,13 @@ async function showProducts(){
     productToShow.forEach(async product => {
              
         const col1 = document.createElement('div');
-        col1.className = 'col col-sm-3'
+        col1.className = 'col col-sm-3 col-lg-3 '
             
         const card = document.createElement('div');
-        card.className = 'card product-card';
+        card.className = 'card w-500 h-10'
 
         const img = document.createElement('img');
-        img.className = 'card-img-top';
+        img.className = 'card-img-top img-thumbnail';
 
         // Get the image from database by id
         img.src = `backend/getImage.php?id=${product.id}`

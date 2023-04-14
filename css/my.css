@@ -33,9 +33,13 @@
 }
 
 #product-card{
-    width: 200px;
+    width: 3px;
 }
 
 .text-li{
     border: 2px solid black !important;
 }
+
+.col-p{
+    margin-left: 10px !important;
+} 

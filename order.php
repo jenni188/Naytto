@@ -112,13 +112,13 @@
         <div class="col">
             <div class="form-group">
                 <label for="product1" class="form-label mt-3">Product 1</label>
-                <input name="product1"type="text" class="form-control" placeholder="Product 1">
+                <input name="product1"type="number"  min="1" class="form-control" placeholder="Product 1">
             </div>
         </div>
         <div class="col">
             <div class="form-group">
                 <label for="amount1" class="form-label mt-3">Amount</label>
-                <input name="amount1"type="number" class="form-control" placeholder="Amount 1">
+                <input name="amount1"type="number"  min="1" class="form-control" placeholder="Amount 1">
             </div>
         </div>
     </div>

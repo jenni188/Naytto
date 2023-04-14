@@ -35,28 +35,32 @@ function populateProductForm(data){
 //send data to backend where it will be updated
 function modifyProduct(event){
     event.preventDefault();
-    console.log('save changes');
 
+    // Check ir all fields are set
+    const name = document.forms['editProduct']['p-name'].value;
+    const price = document.forms['editProduct']['p-price'].value;
+    const code = document.forms['editProduct']['p-code'].value;
+    const category = document.forms['editProduct']['p-category'].value;
+    
+    if (name.length <= 0 || code.length <= 0 || category.length <= 0|| price.length <= 0){
+        showMessage('error', 'Name, code, price and category must be set!');
+        return;
+    }
 
-    let productData = {};
+    // Create new FormData object
+    const formData = new FormData(document.forms['editProduct']);
 
-    // variables to an array
-    productData.id = document.forms['editProduct']['id'].value;
-    productData.name = document.forms['editProduct']['p-name'].value;
-    productData.price = document.forms['editProduct']['p-price'].value;
-    productData.code = document.forms['editProduct']['p-code'].value;
-    productData.category = document.forms['editProduct']['p-category'].value;
-
+    
     let ajax = new XMLHttpRequest();
     ajax.onload = function(){
-        let data = JSON.parse(this.responseText);
-        if(data.hasOwnProperty('success')){
-            window.location.href = 'homeAdmin.php?type=success&msg=Text edited!';
-        }else{
-            showMessage('error', data.error);
+        const data = JSON.parse(this.responseText);
+        if (data.hasOwnProperty('success')){
+            window.location.href = "homeAdmin.php?type=success&msg=Product edited!"
+        } else{
+            showMessage('error',data.error);
         }
     }
-    ajax.open("POST", "backend/modifyProduct.php", true);
-    ajax.setRequestHeader("Content-Type", "application/json");
-    ajax.send(JSON.stringify(productData));
+
+    ajax.open("POST" , "backend/modifyProduct.php", true);
+    ajax.send(formData);
 }

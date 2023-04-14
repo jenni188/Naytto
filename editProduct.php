@@ -70,7 +70,7 @@ if (!isset($_SESSION['logged_in'])){
     </div>
     <div class="col-6" id="order-col">
       One of three columns
-      <form name="editProduct" >
+      <form name="editProduct" action="editProduct.php" method="POST" enctype="multipart/form-data" >
       <input type="hidden" name="id">
         <fieldset>
             <legend>Edit Product</legend>
@@ -88,11 +88,11 @@ if (!isset($_SESSION['logged_in'])){
             </div>
             <div class="form-group">
                 <label for="p-category" class="form-label mt-3">Product Category</label>
-                <input type="text" id="p-category" name="p-cateory" class="form-control" placeholder="Product Category">
+                <input type="text" id="p-category" name="p-category" class="form-control" placeholder="Product Category">
             </div>
             <div class="form-group">
             <label for="p-img" class="form-label mt-3">Product Image (Current)</label>
-            <img id="product-image" />
+            <img id="product-image"  class="img-thumbnail" />
             <input name="p-img" type="file" class="form-control" id="p-img" placeholder="Product Image">
             </div>
         </fieldset>
