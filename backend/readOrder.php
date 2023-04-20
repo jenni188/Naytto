@@ -41,8 +41,8 @@ for ($i = 0; $i < count($products); $i++){
 
 $to = EMAIL;
 $subject = "Tilaus lomakkeen tiedot";
-$headers =  'From: webmaster@example.com' . PHP_EOL 
-		    .'Reply-To: webmaster@example.com' . PHP_EOL
+$headers =  "From: {$email}" . PHP_EOL 
+		    ."Reply-To: {$email}" . PHP_EOL
             .'Content-Type: text/plain; charset=UTF-8';
 $message = "
 Etunimi: {$fname} ".PHP_EOL."
