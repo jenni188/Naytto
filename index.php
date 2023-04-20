@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navi">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Hallavan Art</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,6 +25,11 @@
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
+        <?php if (isset($_SESSION['logged_in'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="homeAdmin.php">Home admin</a>	
+          </li>
+        <?php endif; ?>  
         <li class="nav-item">
           <a class="nav-link" href="order.php">Order form</a>
         </li>
@@ -38,11 +43,6 @@
         <?php endif; ?>
         <?php if (isset($_SESSION['logged_in'])) : ?>
           <li class="nav-item">
-            <a class="nav-link" href="homeAdmin.php">Home admin</a>	
-          </li>
-        <?php endif; ?>  
-        <?php if (isset($_SESSION['logged_in'])) : ?>
-          <li class="nav-item">
             <a class="nav-link" href="logout.php">Log out</a>	
           </li>
         <?php endif; ?> 
@@ -51,7 +51,7 @@
   </div>
   <?php if (isset($_SESSION['logged_in'])): ?>
       <div>
-        <p class="login-p">Logged in user: <?php echo $_SESSION['username']?></p>
+        <p id="login-p">Logged in user: <?php echo $_SESSION['username']?></p>
       </div>
   <?php endif; ?> 
 </nav>
@@ -62,26 +62,21 @@
 <div class="container-fluid" >
     <div class="row">
         <div class="col moikka" >
-        1 of 2
         </div>
   </div>
   <div class="row ">
     <div class="col " id="radio-buttons">
-      One of three columns
         <div>
           <input class="form-check-input" type="radio"  checked="" name="optionsradio" id="all" value="all">
           <label class="form-check-label" for="optionsradio1" >Show All</label>
         </div>
     </div>
     <div class=" col-sm-12 col-lg-9" id="order-col">
-      One of three columns
-      tänne tuotteet
       <div class="row" id="order-row">
         <div></div>
       </div>
     </div>
     <div class="col moi">
-      One of three columns
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 <?php
+include_once('../env.php');
 //reading the order form and sending it as an email to halla
 
 // if (!isset($_POST['fname']) || !isset($_POST['product0'])){
@@ -22,39 +23,56 @@ $select = $_POST['select'];
 $products = array();
 $amounts = array();
 
+$data = '';
+$index = 0;
 foreach ($_POST as $key => $value){
-   if   (substr($key, 0, 7) == 'product' ){
-        $products[] = $value;
-   }
-   if   (substr($key, 0, 5) == 'amount' ){
-    $amounts[] = $value;
-}
+    if (strcmp(substr($key,0,7), "product") === 0) {
+       array_push($products, $value);
+    }
+    if (strcmp(substr($key,0,6), "amount") === 0) {
+        array_push($amounts, $value);
+     }
 };
 
+for ($i = 0; $i < count($products); $i++){
+    $data .= "Tuotekoodi: {$products[$i]}  Määrä: {$amounts[$i]}" . PHP_EOL;
+}
 
 
-
-$to = "jenni.hynynen@esedulainen.fi";
+$to = EMAIL;
 $subject = "Tilaus lomakkeen tiedot";
+$headers =  'From: webmaster@example.com' . PHP_EOL 
+		    .'Reply-To: webmaster@example.com' . PHP_EOL
+            .'Content-Type: text/plain; charset=UTF-8';
 $message = "
-Etunimi: {$fname} 
-Sukunimi: {$lname}
-Puhelin numero: {$pnumber}
-Sähköposti: {$email}
-Maksutapa: {$select}
+Etunimi: {$fname} ".PHP_EOL."
+Sukunimi: {$lname}".PHP_EOL."
+Puhelin numero: {$pnumber}".PHP_EOL."
+Sähköposti: {$email}".PHP_EOL."
+Maksutapa: {$select}".PHP_EOL."
+Tuotteet: ".PHP_EOL."
+{$data}
 ";
 
-$index = 0;
-foreach ($product in $products){
-    $message += "Tuote: {$product} {$amounts[$index]}" . PHP_EOL;
+// echo($message);
+
+// $index = 0;
+// foreach ($product in $products){
+//     $message += "Tuote: {$product} {$amounts[$index]}" . PHP_EOL;
+// }
+if (mail($to,$subject,$message, $headers)){
+    $data = array(
+        'success' => 'Tilaus lähetetty...'
+    );
+} else {
+    $data = array(
+        'error' => 'Joku ongelma'
+    );
 }
-mail($to,$subject,$message);
 
 //echo ($message);
 // Kun sähköposti on lähetetty lahetä tieto selaimelle
-$data = array(
-    'success' => 'Tilaus lähetetty...'
-);
+
 
 
 header("Content-type: application/json;charset=utf-8");

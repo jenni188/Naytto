@@ -13,7 +13,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navi">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Hallavan Art</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,6 +25,11 @@
           <a class="nav-link " href="index.php">Home
           </a>
         </li>
+        <?php if (isset($_SESSION['logged_in'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="homeAdmin.php">Home admin</a>	
+          </li>
+        <?php endif; ?>  
         <li class="nav-item">
           <a class="nav-link" href="order.php">Order form</a>
         </li>
@@ -38,11 +43,6 @@
             <a class="nav-link" href="aboutAdmin.php">about admin</a>	
           </li>
         <?php endif; ?>
-        <?php if (isset($_SESSION['logged_in'])) : ?>
-          <li class="nav-item">
-            <a class="nav-link" href="homeAdmin.php">Home admin</a>	
-          </li>
-        <?php endif; ?>  
         <?php if (isset($_SESSION['logged_in'])) : ?>
           <li class="nav-item">
             <a class="nav-link" href="logout.php">Log out</a>	
@@ -64,15 +64,13 @@
 <div class="container-fluid" >
     <div class="row">
         <div class="col moikka" >
-        1 of 2
         </div>
   </div>
   <div class="row ">
     <div class="col-sm-3 col-lg-2 moi ">
-      One of three columns
     </div>
     <div class="col-sm-6 col-lg-8" id="order-col">
-      One of three columns
+
       <ul id="about-ul">
         <li class="list-group-item">
           <h2>
@@ -83,7 +81,6 @@
       </ul>
     </div>
     <div class="col-sm-3 col-lg-2 moi">
-      One of three columns
     </div>
   </div>
 </div>

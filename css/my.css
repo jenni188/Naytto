@@ -1,14 +1,11 @@
-.moi{
-    border: 2px black solid !important;
-}
 
 
 #order-col{
-    background-color:#cccccc;
+    background-color: #cce0ff;
 }
 
 .contact-col{
-    background-color:#cccccc;
+    background-color:	 #cce0ff;
 }
 
 #filter-col{
@@ -26,20 +23,27 @@
 }
 
 .moikka{
-    background-image: url("../img/tausta.jpg");
-    background-repeat: no-repeat;
-    background-size: auto;
-    height: 200px;
+    background-image: linear-gradient( #0099cc, #33ccff,  #99ccff,#e6f2ff);
+    height: 300px;
 }
 
 #product-card{
     width: 3px;
 }
 
-.text-li{
-    border: 2px solid black !important;
-}
-
 .col-p{
     margin-left: 10px !important;
 } 
+
+#navi{
+    background-image: linear-gradient(to right, #002b80, #004de6, #4d88ff,#4d88ff,#004de6,#002b80) !important;
+}
+
+#login-p{
+    color: white !important;
+}
+
+#radio-buttons{
+    background-color: #99c2ff;
+    color: #3385ff;
+}

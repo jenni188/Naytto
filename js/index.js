@@ -96,7 +96,7 @@ async function showProducts(){
     productToShow.forEach(async product => {
              
         const col1 = document.createElement('div');
-        col1.className = 'col col-sm-3 col-lg-3 '
+        col1.className = 'col-lg-3 col-sm-6'
             
         const card = document.createElement('div');
         card.className = 'card w-500 h-10'

@@ -13,7 +13,7 @@
 
 <body class= "order-b">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navi">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Hallavan Art</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,6 +25,11 @@
           <a class="nav-link" href="index.php">Home
           </a>
         </li>
+        <?php if (isset($_SESSION['logged_in'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link" href="homeAdmin.php">Home admin</a>	
+          </li>
+        <?php endif; ?>  
         <li class="nav-item">
           <a class="nav-link active" href="order.php">Order form</a> 
         </li>
@@ -36,11 +41,6 @@
             <a class="nav-link" href="aboutAdmin.php">about admin</a>	
           </li>
         <?php endif; ?>
-        <?php if (isset($_SESSION['logged_in'])) : ?>
-          <li class="nav-item">
-            <a class="nav-link" href="homeAdmin.php">Home admin</a>	
-          </li>
-        <?php endif; ?>  
         <?php if (isset($_SESSION['logged_in'])) : ?>
           <li class="nav-item">
             <a class="nav-link" href="logout.php">Log out</a>	
@@ -61,21 +61,19 @@
 </div>
 <div class="container container-1" >
   <div class="row ">
-    <div class="col-3 moi ">
-      One of three columns
+    <div class="col-2 moi ">
     </div>
-    <div class="col-6" id="order-col">
-      One of three columns
+    <div class="col-8" id="order-col">
       <form name="orderForm" action="backend/readOrder.php"method="POST">
   <fieldset>
     <legend>Order Form</legend>
     <div class="form-group">
         <label for="fname" class="form-label mt-3">First name</label>
-        <input type="text" id="fname" name="fname" class="form-control" placeholder="First name">
+        <input type="text" id="fname" name="fname" class="form-control" placeholder="First name" pattern="[a-zA-Z]*">
     </div>
     <div class="form-group">
         <label for="lname" class="form-label mt-3">Last name</label>
-        <input type="text" id="lname" name="lname" class="form-control" placeholder="Last name">
+        <input type="text" id="lname" name="lname" class="form-control" placeholder="Last name" pattern="[a-zA-Z]*">
     </div>
     <div class="form-group">
         <label for="pnumber" class="form-label mt-3">Phone number</label>
@@ -87,7 +85,6 @@
     </div>
     <div class="row">
         <div class="col">
-            col one
             <div class="row">
                 <div class="col">
                     <button class="btn btn-primary btn-sm float-end mt-2" id="addProduct">Add new product</button>
@@ -98,7 +95,6 @@
             </div>
         </div>
         <div class="col">
-            col two
             <div class="form-group">
                 <label for="select" class="form-label">Payment method</label>
                 <select class="form-select" id="payment">
@@ -112,7 +108,7 @@
         <div class="col">
             <div class="form-group">
                 <label for="product1" class="form-label mt-3">Product 1</label>
-                <input name="product1"type="number"  min="1" class="form-control" placeholder="Product 1">
+                <input name="product1"type="number"  min="1" class="form-control" placeholder="Product code 1">
             </div>
         </div>
         <div class="col">
@@ -126,8 +122,7 @@
   <button type="submit" class="btn btn-primary" id="sendOrder">Send order</button>
 </form>
     </div>
-    <div class="col-3 moi">
-      One of three columns
+    <div class="col-2 moi">
     </div>
   </div>
 </div>

@@ -18,7 +18,7 @@ if (!isset($_SESSION['logged_in'])){
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navi">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">Hallavan Art</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,6 +29,13 @@ if (!isset($_SESSION['logged_in'])){
         <li class="nav-item">
           <a class="nav-link" href="index.php">Home</a>
         </li>
+        <?php if (isset($_SESSION['logged_in'])) : ?>
+          <li class="nav-item">
+            <a class="nav-link active" href="homeAdmin.php">Home admin
+            <span class="visually-hidden">(current)</span>
+            </a>	
+          </li>
+        <?php endif; ?>  
         <li class="nav-item">
           <a class="nav-link" href="order.php">Order form</a>
         </li>
@@ -42,13 +49,6 @@ if (!isset($_SESSION['logged_in'])){
         <?php endif; ?>
         <?php if (isset($_SESSION['logged_in'])) : ?>
           <li class="nav-item">
-            <a class="nav-link active" href="homeAdmin.php">Home admin
-            <span class="visually-hidden">(current)</span>
-            </a>	
-          </li>
-        <?php endif; ?>  
-        <?php if (isset($_SESSION['logged_in'])) : ?>
-          <li class="nav-item">
             <a class="nav-link" href="logout.php">Log out</a>	
           </li>
         <?php endif; ?> 
@@ -57,7 +57,7 @@ if (!isset($_SESSION['logged_in'])){
   </div>
   <?php if (isset($_SESSION['logged_in'])): ?>
       <div>
-        <p class="login-p">Logged in user: <?php echo $_SESSION['username']?></p>
+        <p id="login-p">Logged in user: <?php echo $_SESSION['username']?></p>
       </div>
   <?php endif; ?> 
 </nav>
@@ -68,26 +68,22 @@ if (!isset($_SESSION['logged_in'])){
 <div class="container-fluid" >
     <div class="row">
         <div class="col moikka" >
-        1 of 2
         </div>
   </div>
   <div class="row ">
     <div class="col-sm " id="radio-buttons">
-      One of three columns
         <div>
           <input class="form-check-input" type="radio"  checked="" name="optionsradio" id="all" value="all">
           <label class="form-check-label" for="optionsradio1" >Show All</label>
         </div>
     </div>
     <div class=" col-sm-12 col-lg-8" id="order-col">
-      One of three columns
-      tänne tuotteet
+    <h3>Welcome Admin</h3>
       <div class="row" id="order-row">
         <div></div>
       </div>
     </div>
     <div class="col-sm moi">
-      One of three columns
       <button class="btn btn-primary btn-md float-end " id="createProduct-btn">Create New Product</button>
     </div>
   </div>

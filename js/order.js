@@ -33,16 +33,22 @@ function sendOrder(event){
     })
 
 
-    //  if (fname.length <= 0 ){
-    //      showMessage('warning','moi');
-    //      return;
-    //  }else if (lname.length <= 0 ){
-    //      alert("Last name empty!")
-    //      return;
-    //  }else if (email.length <= 0 ){
-    //      alert("Email empty!")
-    //     return;
-    //  }
+     if (fname.length <= 0 ){
+         showMessage('warning','First name needs to be inserted!');
+         return;
+     }else if (lname.length <= 0 ){
+        showMessage('warning','last name needs to be inserted!');
+         return;
+     }else if (email.length <= 0 ){
+        showMessage('warning','Email needs to be inserted!');
+        return;
+     }else if (pnumber.length <= 0 ){
+        showMessage('warning','Phone number needs to be inserted!');
+        return;
+     }else if (products[0].length <= 0 ){
+        showMessage('warning','Insert at least one product!');
+        return;
+     }
 
     let postData = `fname=${fname}&lname=${lname}&pnumber=${pnumber}&email=${email}&select=${select}`;
     let i = 0;
@@ -60,7 +66,7 @@ function sendOrder(event){
     ajax.onload = function(){
         const data = JSON.parse(this.responseText);
         if (data.hasOwnProperty('success')){
-            window.location.href = "backend/readOrder.php?type=success&msg=New order inserted"
+            window.location.href = "index.php?type=success&msg=New order succesful!"
         } else{
             showMessage('error',data.error);
         }
@@ -107,15 +113,20 @@ function addProduct(event){
     input1.classList.add('form-control');
 
     const inputType1 = document.createAttribute('type');
-    inputType1.value = "text";
+    inputType1.value = "number";
     input1.setAttributeNode(inputType1);
+
+    const inputMin1 = document.createAttribute('min');
+    inputMin1.value = "1";
+    input1.setAttributeNode(inputMin1);
+
     
     const inputName1 = document.createAttribute('name');
     inputName1.value = `product${productCount}`;
     input1.setAttributeNode(inputName1);
 
     const inputPlaceHolder1 = document.createAttribute('placeholder');
-    inputPlaceHolder1.value = `Product ${productCount}`;
+    inputPlaceHolder1.value = `Product code ${productCount}`;
     input1.setAttributeNode(inputPlaceHolder1);
 
     rdiv.appendChild(col1);
@@ -145,6 +156,11 @@ function addProduct(event){
    const inputType2 = document.createAttribute('type');
    inputType2.value = "number";
    input2.setAttributeNode(inputType2);
+
+    const inputMin2 = document.createAttribute('min');
+    inputMin2.value = "1";
+    input2.setAttributeNode(inputMin2);
+
    
    const inputName2 = document.createAttribute('name');
    inputName2.value = `amount${amountCount}`;
@@ -178,5 +194,6 @@ function deleteProduct(event){
     parentElement.removeChild(productToDelete);
 
     productCount--;
+    amountCount--;
 }
 

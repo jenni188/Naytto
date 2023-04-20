@@ -1,9 +1,10 @@
 <?php
 //connection to database
-$servername = "localhost";
-$db_username = "root";
-$db_password = "";
-$dbname = "naytto";
+include_once('../env.php');
+$servername = DB_HOST;
+$db_username = DB_USER;
+$db_password = DB_PASSWD;
+$dbname = DATABASE;
 
 
 try {
