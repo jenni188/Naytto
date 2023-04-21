@@ -2,14 +2,14 @@
 include_once('../env.php');
 //reading the order form and sending it as an email to halla
 
-// if (!isset($_POST['fname']) || !isset($_POST['product0'])){
-//     $data = array(
-//         'error'=> 'POST-dataa ei saatavilla!!'
-//     );
-//     header("Content-type: application/json;charset=utf-8");
-//     echo json_encode($data);
-//     die();
-// }
+if (!isset($_POST['fname']) || !isset($_POST['product0'])){
+    $data = array(
+        'error'=> 'POST-dataa ei saatavilla!!'
+    );
+    header("Content-type: application/json;charset=utf-8");
+    echo json_encode($data);
+    die();
+}
 
 // Lähetä sähköposti
 $fname = $_POST['fname'];

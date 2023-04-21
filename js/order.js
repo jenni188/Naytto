@@ -66,7 +66,7 @@ function sendOrder(event){
     ajax.onload = function(){
         const data = JSON.parse(this.responseText);
         if (data.hasOwnProperty('success')){
-            window.location.href = "index.php?type=success&msg=New order succesful!"
+            window.location.href = "index.php?type=success&msg=Thank you for your order!"
         } else{
             showMessage('error',data.error);
         }

@@ -30,7 +30,7 @@ function showText(){
     data.forEach(text => {
 
         const newLi = document.createElement('li');
-        newLi.className = 'list-group-item';
+        newLi.className = 'list-group-item mt-3';
 
         const h2 = document.createElement('h2');
         const h2Text = document.createTextNode(text.heading);
