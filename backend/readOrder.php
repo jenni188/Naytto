@@ -68,7 +68,7 @@ if (mail($to,$subject,$message, $headers)){
     $to = $email;
     $subject = "Tilaus vastaanotettu";
     $headers =  "From: No-Reply@gmail.com" . PHP_EOL 
-		    ."Reply-To:" EMAIL. PHP_EOL
+		    ."Reply-To:". EMAIL. PHP_EOL
             .'Content-Type: text/plain; charset=UTF-8';
     $message = "
     Kiitos tilauksestanne! ".PHP_EOL."
