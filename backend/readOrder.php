@@ -54,6 +54,7 @@ Tuotteet: ".PHP_EOL."
 {$data}
 ";
 
+
 // echo($message);
 
 // $index = 0;
@@ -64,9 +65,27 @@ if (mail($to,$subject,$message, $headers)){
     $data = array(
         'success' => 'Tilaus lähetetty...'
     );
+    $to = $email;
+    $subject = "Tilaus vastaanotettu";
+    $headers =  "From: No-Reply@gmail.com" . PHP_EOL 
+		    ."Reply-To:" EMAIL. PHP_EOL
+            .'Content-Type: text/plain; charset=UTF-8';
+    $message = "
+    Kiitos tilauksestanne! ".PHP_EOL."
+    Olemme teihin yhteydessä mahdollisimman nopeasti.".PHP_EOL."
+    Tämä on automaattinen sähköposti. Älä vastaa tähän viestiin.".PHP_EOL." ";     
+    if(mail($to,$subject,$message,$headers)){
+        $data = array(
+            'success' => 'Kiitos lähetetty...'
+        );
+    }else{
+        $data = array(
+            'error' => 'Joku ongelma kiitoksen lähetyksessä!'
+        );
+    }
 } else {
     $data = array(
-        'error' => 'Joku ongelma'
+        'error' => 'Joku ongelma tilauksen lähetyksessä!'
     );
 }
 
