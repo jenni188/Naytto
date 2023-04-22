@@ -1,3 +1,4 @@
+// index page js
 window.addEventListener('load', getData);
 document.getElementById('radio-buttons').addEventListener('click', showProducts);
 
@@ -8,7 +9,7 @@ function getData(){
     getProducts()
     getCategory()
 }
-
+//get product data from data base
 function getProducts(){
     console.log("haetaan data")
 
@@ -21,7 +22,7 @@ function getProducts(){
     ajax.open("GET", "backend/getProducts.php");
     ajax.send();
 }
-
+//get categories from database
 function getCategory(){
     console.log("haetaan dataa");
 
@@ -37,6 +38,7 @@ function getCategory(){
 
 let buttonCount = 1;
 
+//creating radio buttons from categories
 function showRadio(){
 
     buttonCount++;
@@ -71,6 +73,7 @@ function showRadio(){
 
 
 
+//showing products 
 async function showProducts(){
 
     const div = document.getElementById('order-row');
@@ -80,8 +83,6 @@ async function showProducts(){
     console.log('category value',  document.querySelector('input[name=optionsradio]:checked').value)
     let category = document.querySelector('input[name=optionsradio]:checked').value;
 
-
-    // if(document.getElementById('gender_Male').checked) {
 
     productToShow = data.filter((product) => {
         console.log(product)

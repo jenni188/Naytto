@@ -1,3 +1,4 @@
+//homeAdmin page js
 window.addEventListener('load', getData1);
 document.getElementById('radio-buttons').addEventListener('click', showProducts1);
 document.getElementById('order-row').addEventListener('click', openProduct);
@@ -44,6 +45,7 @@ function getCategory1(){
 
 let buttonCount = 1;
 
+//creating radio buttons from categories
 function showRadio1(){
 
     buttonCount++;
@@ -76,8 +78,7 @@ function showRadio1(){
     })
 }
 
-
-
+//showing products 
 async function showProducts1(){
 
     const div = document.getElementById('order-row');

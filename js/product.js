@@ -1,3 +1,4 @@
+//new product js
 document.forms['p-form'].addEventListener('submit', createNewP);
 
 function createNewP(event){

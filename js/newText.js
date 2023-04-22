@@ -1,3 +1,4 @@
+//creating new text js
 document.forms['newText'].addEventListener('submit', newText);
 
 function newText(event){
